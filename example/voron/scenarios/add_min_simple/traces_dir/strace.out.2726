@@ -1,0 +1,10 @@
+22:11:23.958965 syscall_334(0x7f3e8a9fcfe0, 0x20, 0, 0x53053053, 0x80, 0x7ffd633f23ff) = 0
+22:11:23.961569 set_robust_list(0x7f3e8a9fc920, 24) = 0
+22:11:23.962105 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+22:11:23.962507 sched_getaffinity(2725, 128, 0x7f3e8a9fbcb0) = 32
+22:11:23.963201 sched_setaffinity(0, 128, 0x7f3e8a9fbcb0) = 0
+22:11:23.963764 gettid()                = 2726
+22:11:23.963917 futex(0x5611300227b0, FUTEX_WAKE_PRIVATE, 1) = 1
+22:11:23.966782 futex(0x561130022760, FUTEX_WAKE_PRIVATE, 1) = 1
+22:11:23.969449 poll([...], 1, 4294967295 <unfinished ...>
+20:48:20.363577 +++ killed by SIGHUP +++

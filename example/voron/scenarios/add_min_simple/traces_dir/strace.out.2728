@@ -1,0 +1,14 @@
+22:11:24.299595 syscall_334(0x7f3e899cdfe0, 0x20, 0, 0x53053053, 0x80, 0x7ffd633f207f) = 0
+22:11:24.299818 set_robust_list(0x7f3e899cd920, 24) = 0
+22:11:24.303037 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+22:11:24.303171 sched_getaffinity(2725, 128, 0x7f3e899cccb0) = 32
+22:11:24.303769 sched_setaffinity(0, 128, 0x7f3e899cccb0) = 0
+22:11:24.304287 sigaltstack(NULL, {ss_sp=0, ss_flags=SS_DISABLE, ss_size=0}) = 0
+22:11:24.305029 mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f3e891c9000
+22:11:24.305190 mprotect(0x7f3e891c9000, 4096, PROT_NONE) = 0
+22:11:24.305342 sigaltstack({ss_sp=0x7f3e891c9000, ss_flags=0, ss_size=16384}, NULL) = 0
+22:11:24.306081 gettid()                = 2728
+22:11:24.306237 futex(0x56113008fa90, FUTEX_WAKE_PRIVATE, 1) = 1
+22:11:24.309452 futex(0x56113008fa40, FUTEX_WAKE_PRIVATE, 1) = 0
+22:11:24.312741 openat(AT_FDCWD, "/tmp/clr-debug-pipe-2725-192525-in", O_RDONLY <unfinished ...>
+20:48:20.363053 +++ killed by SIGHUP +++

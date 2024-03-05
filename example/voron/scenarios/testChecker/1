@@ -1,0 +1,760 @@
+execve("./toysync-1", ["./toysync-1", "2"], 0x7ffcd05bff48 /* 28 vars */) = 0
+readlink("/proc/self/exe", "/home/eden/Projects/Final_Projec"..., 4096) = 93
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/glibc-hwcaps/x86-64-v3/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/glibc-hwcaps/x86-64-v3", 0x7ffd160abec0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/glibc-hwcaps/x86-64-v2/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/glibc-hwcaps/x86-64-v2", 0x7ffd160abec0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/tls/haswell/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/tls/haswell/x86_64", 0x7ffd160abec0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/tls/haswell/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/tls/haswell", 0x7ffd160abec0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/tls/x86_64", 0x7ffd160abec0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/tls/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/tls", 0x7ffd160abec0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/haswell/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/haswell/x86_64", 0x7ffd160abec0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/haswell/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/haswell", 0x7ffd160abec0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/x86_64", 0x7ffd160abec0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/netcoredeps", 0x7ffd160abec0, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=21448, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=14432, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=2260296, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=940560, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=125488, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+readlink("/proc", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/proc/self", "18824", 1023)   = 5
+readlink("/proc/18824", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/proc/18824/exe", "/home/eden/Projects/Final_Projec"..., 1023) = 93
+readlink("/home", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/toysync-1", 0x7ffd160ac3c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home", 0x7ffd160ac3b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden", 0x7ffd160ac3b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects", 0x7ffd160ac3b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB", 0x7ffd160ac3b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice", 0x7ffd160ac3b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example", 0x7ffd160ac3b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron", 0x7ffd160ac3b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios", 0x7ffd160ac3b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker", 0x7ffd160ac3b0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/toysync-1", 0x7ffd160ac3b0, 1023) = -1 EINVAL (Invalid argument)
+access("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/libhostfxr.so", F_OK) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/dotnet/install_location_x64", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=16, ...}, AT_EMPTY_PATH) = 0
+access("/usr/lib/dotnet/host/fxr", F_OK) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/host/fxr", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+access("/usr/lib/dotnet/host/fxr/7.0.14/libhostfxr.so", F_OK) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/host/fxr/7.0.14/libhostfxr.so", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=350688, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/toysync-1", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=4817813, ...}, AT_EMPTY_PATH) = 0
+readlink("/home", 0x7ffd160aba80, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden", 0x7ffd160aba80, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects", 0x7ffd160aba80, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB", 0x7ffd160aba80, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice", 0x7ffd160aba80, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example", 0x7ffd160aba80, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron", 0x7ffd160aba80, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios", 0x7ffd160aba80, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker", 0x7ffd160aba80, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/Scenario Compilation.runtimeconfig.dev.json", 0x7ffd160aba80, 1023) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/toysync-1", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=4817813, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+access("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/Microsoft.NETCore.App.deps.json", F_OK) = 0
+readlink("/usr", 0x7ffd160ab6d0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160ab6d0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160ab6d0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160ab6d0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160ab6d0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160ab6d0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/Microsoft.NETCore.App.runtimeconfig.dev.json", 0x7ffd160ab6d0, 1023) = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffd160ab7c0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160ab7c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160ab7c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160ab7c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160ab7c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160ab7c0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/Microsoft.NETCore.App.runtimeconfig.json", 0x7ffd160ab7c0, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/Microsoft.NETCore.App.runtimeconfig.json", O_RDONLY) = 3
+access("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/Microsoft.NETCore.App.deps.json", F_OK) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/Microsoft.NETCore.App.deps.json", O_RDONLY) = 3
+access("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libhostpolicy.so", F_OK) = 0
+access("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libhostpolicy.so", F_OK) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libhostpolicy.so", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=305040, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/toysync-1", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=4817813, ...}, AT_EMPTY_PATH) = 0
+access("", F_OK)                        = -1 ENOENT (No such file or directory)
+access("opt/coreservicing", F_OK)       = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffd160ab700, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160ab700, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160ab700, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160ab700, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160ab700, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160ab700, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/Microsoft.NETCore.App.deps.json", 0x7ffd160ab700, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/Microsoft.NETCore.App.deps.json", O_RDONLY) = 3
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/toysync-1", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0755, st_size=4817813, ...}, AT_EMPTY_PATH) = 0
+access("/etc/os-release", F_OK)         = 0
+openat(AT_FDCWD, "/etc/os-release", O_RDONLY) = 3
+access("", F_OK)                        = -1 ENOENT (No such file or directory)
+access("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", F_OK) = 0
+access("", F_OK)                        = -1 ENOENT (No such file or directory)
+access("", F_OK)                        = -1 ENOENT (No such file or directory)
+readlink("/usr", 0x7ffd160ab930, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160ab930, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160ab930, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160ab930, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160ab930, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160ab930, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libcoreclr.so", 0x7ffd160ab930, 1023) = -1 EINVAL (Invalid argument)
+access("/etc/os-release", F_OK)         = 0
+openat(AT_FDCWD, "/etc/os-release", O_RDONLY) = 3
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libcoreclr.so", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=6983544, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libcoreclrtraceptprovider.so", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=619272, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/liblttng-ust.so.1", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=496472, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnuma.so.1", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=48152, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/liblttng-ust-common.so.1", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=51896, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/liblttng-ust-tracepoint.so.1", O_RDONLY|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0644, st_size=51568, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/status", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/sys/devices/system/node", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/sys/devices/system/cpu", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+newfstatat(3, "", {st_mode=S_IFDIR|0755, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/status", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+readlink("/proc/self/exe", "/home/eden/Projects/Final_Projec"..., 4095) = 93
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/toysync-1", O_RDONLY|O_CLOEXEC) = 3
+getcwd("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker", 1024) = 84
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/linux-vdso.so.1", 0x7ffd160a8880, 1023) = -1 ENOENT (No such file or directory)
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/libpthread.so.0", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/libdl.so.2", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/libstdc++.so.6", "libstdc++.so.6.0.30", 1023) = 19
+readlink("/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", O_RDONLY|O_CLOEXEC) = 3
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/libm.so.6", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/libgcc_s.so.1", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/libc.so.6", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+readlink("/lib64", "usr/lib64", 1023)   = 9
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib64", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib64/ld-linux-x86-64.so.2", "/lib/x86_64-linux-gnu/ld-linux-x"..., 1023) = 42
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2", O_RDONLY|O_CLOEXEC) = 3
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/host", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/host/fxr", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/host/fxr/7.0.14", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/host/fxr/7.0.14/libhostfxr.so", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/dotnet/host/fxr/7.0.14/libhostfxr.so", O_RDONLY|O_CLOEXEC) = 3
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libhostpolicy.so", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libhostpolicy.so", O_RDONLY|O_CLOEXEC) = 3
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libcoreclr.so", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libcoreclr.so", O_RDONLY|O_CLOEXEC) = 3
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libcoreclrtraceptprovider.so", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libcoreclrtraceptprovider.so", O_RDONLY|O_CLOEXEC) = 3
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/liblttng-ust.so.1", "liblttng-ust.so.1.0.0", 1023) = 21
+readlink("/usr/lib/x86_64-linux-gnu/liblttng-ust.so.1.0.0", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/liblttng-ust.so.1.0.0", O_RDONLY|O_CLOEXEC) = 3
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/libnuma.so.1", "libnuma.so.1.0.0", 1023) = 16
+readlink("/usr/lib/x86_64-linux-gnu/libnuma.so.1.0.0", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libnuma.so.1.0.0", O_RDONLY|O_CLOEXEC) = 3
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/liblttng-ust-common.so.1", "liblttng-ust-common.so.1.0.0", 1023) = 28
+readlink("/usr/lib/x86_64-linux-gnu/liblttng-ust-common.so.1.0.0", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/liblttng-ust-common.so.1.0.0", O_RDONLY|O_CLOEXEC) = 3
+readlink("/lib", "usr/lib", 1023)       = 7
+readlink("/usr", 0x7ffd160a8880, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/x86_64-linux-gnu/liblttng-ust-tracepoint.so.1", "liblttng-ust-tracepoint.so.1.0.0", 1023) = 32
+readlink("/usr/lib/x86_64-linux-gnu/liblttng-ust-tracepoint.so.1.0.0", 0x7ffd160a8880, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/liblttng-ust-tracepoint.so.1.0.0", O_RDONLY|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/dev/shm/lttng-ust-wait-8", O_RDONLY|O_NOFOLLOW|O_CLOEXEC) = 3
+openat(AT_FDCWD, "/dev/shm/lttng-ust-wait-8-1000", O_RDONLY|O_NOFOLLOW|O_CLOEXEC) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0640, st_size=4096, ...}, AT_EMPTY_PATH) = 0
+statfs("/sys/fs/cgroup", {f_type=TMPFS_MAGIC, f_bsize=4096, f_blocks=1009511, f_bfree=1009511, f_bavail=1009511, f_files=1009511, f_ffree=1009495, f_fsid={val=[0x511ff732, 0x8b85a440]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_NOSUID|ST_NODEV|ST_NOEXEC|ST_RELATIME}) = 0
+openat(AT_FDCWD, "/proc/self/mountinfo", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/cgroup", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/mountinfo", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/cgroup", O_RDONLY) = 3
+newfstatat(3, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+readlink("/proc", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/proc/self", "18824", 1023)   = 5
+readlink("/proc/18824", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/proc/18824/exe", "/home/eden/Projects/Final_Projec"..., 1023) = 93
+readlink("/home", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/toysync-1", 0x7ffd160abb70, 1023) = -1 EINVAL (Invalid argument)
+openat(AT_FDCWD, "/sys/fs/cgroup/cpu//cpu.cfs_quota_us", O_RDONLY) = 8
+newfstatat(8, "", {st_mode=S_IFREG|0644, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/dev/urandom", O_RDONLY|O_CLOEXEC) = 9
+openat(AT_FDCWD, "/proc/18824/stat", O_RDONLY) = 9
+newfstatat(9, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 10
+openat(AT_FDCWD, "/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 10
+openat(AT_FDCWD, "/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 10
+openat(AT_FDCWD, "/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 10
+openat(AT_FDCWD, "/proc/18824/stat", O_RDONLY) = 10
+newfstatat(10, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/18824/stat", O_RDONLY) = 10
+newfstatat(10, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+unlink("/tmp/clr-debug-pipe-18824-1009134-in") = -1 ENOENT (No such file or directory)
+mknodat(AT_FDCWD, "/tmp/clr-debug-pipe-18824-1009134-in", S_IFIFO|0700) = 0
+unlink("/tmp/clr-debug-pipe-18824-1009134-out") = -1 ENOENT (No such file or directory)
+mknodat(AT_FDCWD, "/tmp/clr-debug-pipe-18824-1009134-out", S_IFIFO|0700) = 0
+openat(AT_FDCWD, "/proc/18824/stat", O_RDONLY) = 11
+newfstatat(11, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/dev/shm/sem.clrst0000498800000000000f65ee", O_RDWR|O_NOFOLLOW) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/proc/self/maps", O_RDONLY|O_CLOEXEC) = 11
+newfstatat(11, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/maps", O_RDONLY|O_CLOEXEC) = 11
+newfstatat(11, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 11
+openat(AT_FDCWD, "/sys/fs/cgroup/memory//memory.limit_in_bytes", O_RDONLY) = 11
+newfstatat(11, "", {st_mode=S_IFREG|0644, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/meminfo", O_RDONLY) = 11
+newfstatat(11, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/meminfo", O_RDONLY) = 11
+newfstatat(11, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/task/18834/comm", O_RDWR) = 13
+readlink("/usr", 0x7ffd160aa140, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160aa140, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160aa140, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160aa140, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160aa140, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160aa140, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Private.CoreLib.dll", {st_mode=S_IFREG|0644, st_size=10657792, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Private.CoreLib.dll", O_RDONLY) = 11
+newfstatat(11, "", {st_mode=S_IFREG|0644, st_size=10657792, ...}, AT_EMPTY_PATH) = 0
+newfstatat(12, "", {st_mode=S_IFREG|0644, st_size=10657792, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libclrjit.so", O_RDONLY|O_CLOEXEC) = 13
+newfstatat(13, "", {st_mode=S_IFREG|0644, st_size=2771336, ...}, AT_EMPTY_PATH) = 0
+statfs("/sys/fs/cgroup", {f_type=TMPFS_MAGIC, f_bsize=4096, f_blocks=1009511, f_bfree=1009511, f_bavail=1009511, f_files=1009511, f_ffree=1009495, f_fsid={val=[0x511ff732, 0x8b85a440]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_NOSUID|ST_NODEV|ST_NOEXEC|ST_RELATIME}) = 0
+openat(AT_FDCWD, "/proc/self/mountinfo", O_RDONLY) = 13
+newfstatat(13, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/cgroup", O_RDONLY) = 13
+newfstatat(13, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/mountinfo", O_RDONLY) = 13
+newfstatat(13, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/cgroup", O_RDONLY) = 13
+newfstatat(13, "", {st_mode=S_IFREG|0444, st_size=0, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/task/18835/comm", O_RDWR) = 17
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libSystem.Native.so", O_RDONLY|O_CLOEXEC) = 15
+newfstatat(15, "", {st_mode=S_IFREG|0644, st_size=91208, ...}, AT_EMPTY_PATH) = 0
+access("", F_OK)                        = -1 ENOENT (No such file or directory)
+access("opt/corebreadcrumbs", F_OK)     = -1 ENOENT (No such file or directory)
+readlink("/home", 0x7ffd160ab110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden", 0x7ffd160ab110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects", 0x7ffd160ab110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB", 0x7ffd160ab110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice", 0x7ffd160ab110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example", 0x7ffd160ab110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron", 0x7ffd160ab110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios", 0x7ffd160ab110, 1023) = -1 EINVAL (Invalid argument)
+readlink("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker", 0x7ffd160ab110, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/toysync-1", {st_mode=S_IFREG|0755, st_size=4817813, ...}, 0) = 0
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/toysync-1", O_RDONLY) = 15
+newfstatat(16, "", {st_mode=S_IFREG|0755, st_size=4817813, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffd160a6d20, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a6d20, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a6d20, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a6d20, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a6d20, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a6d20, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Runtime.dll", {st_mode=S_IFREG|0644, st_size=32768, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Runtime.dll", O_RDONLY) = 17
+newfstatat(17, "", {st_mode=S_IFREG|0644, st_size=32768, ...}, AT_EMPTY_PATH) = 0
+newfstatat(18, "", {st_mode=S_IFREG|0644, st_size=32768, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffd160a7c90, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a7c90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a7c90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a7c90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a7c90, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a7c90, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Console.dll", {st_mode=S_IFREG|0644, st_size=203264, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Console.dll", O_RDONLY) = 19
+newfstatat(19, "", {st_mode=S_IFREG|0644, st_size=203264, ...}, AT_EMPTY_PATH) = 0
+newfstatat(20, "", {st_mode=S_IFREG|0644, st_size=203264, ...}, AT_EMPTY_PATH) = 0
+getcwd("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker", 256) = 84
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/tmp", O_RDWR|O_CREAT|O_CLOEXEC, 0666) = 21
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/haswell/x86_64/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/haswell/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/haswell/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/haswell", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/tls", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/haswell/x86_64/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/haswell/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/haswell/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/haswell", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64/libc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so", O_RDONLY|O_CLOEXEC) = 21
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64-linux-gnu", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v3", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/glibc-hwcaps/x86-64-v2", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/tls/haswell/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/tls/haswell/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/tls/haswell/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/tls/haswell", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/tls/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/tls/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/tls/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/tls", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/haswell/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/haswell/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/haswell/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/haswell", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu", {st_mode=S_IFDIR|0755, st_size=36864, ...}, 0) = 0
+openat(AT_FDCWD, "/lib/glibc-hwcaps/x86-64-v3/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/glibc-hwcaps/x86-64-v3", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/glibc-hwcaps/x86-64-v2/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/glibc-hwcaps/x86-64-v2", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/tls/haswell/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/tls/haswell/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/tls/haswell/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/tls/haswell", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/tls/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/tls/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/tls/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/tls", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/haswell/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/haswell/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/haswell/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/haswell", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/glibc-hwcaps/x86-64-v3/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/glibc-hwcaps/x86-64-v3", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/glibc-hwcaps/x86-64-v2/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/glibc-hwcaps/x86-64-v2", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/tls/haswell/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/tls/haswell/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/tls/haswell/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/tls/haswell", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/tls/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/tls/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/tls/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/tls", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/haswell/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/haswell/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/haswell/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/haswell", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/x86_64", 0x7ffd160aa540, 0) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/liblibc.so", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/libc", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/libc", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+getcwd("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker", 256) = 84
+getcwd("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker", 256) = 84
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/tmp", {st_mode=S_IFREG|0644, st_size=5, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/tmp", {st_mode=S_IFREG|0644, st_size=5, ...}, AT_SYMLINK_NOFOLLOW) = 0
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/file1", {st_mode=S_IFREG|0644, st_size=5, ...}, AT_SYMLINK_NOFOLLOW) = 0
+link("/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/tmp", "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/file1") = -1 EEXIST (File exists)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.100", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.100", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.100", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.100", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.99", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.99", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.99", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.99", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.98", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.98", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.98", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.98", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.97", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.97", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.97", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.97", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.96", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.96", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.96", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.96", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.95", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.95", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.95", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.95", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.94", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.94", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.94", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.94", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.93", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.93", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.93", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.93", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.92", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.92", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.92", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.92", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.91", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.91", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.91", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.91", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.90", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.90", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.90", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.90", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.89", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.89", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.89", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.89", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.88", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.88", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.88", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.88", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.87", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.87", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.87", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.87", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.86", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.86", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.86", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.86", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.85", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.85", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.85", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.85", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.84", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.84", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.84", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.84", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.83", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.83", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.83", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.83", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.82", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.82", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.82", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.82", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.81", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.81", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.81", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.81", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.80", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.80", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.80", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.80", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.79", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.79", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.79", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.79", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.78", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.78", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.78", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.78", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.77", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.77", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.77", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.77", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.76", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.76", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.76", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.76", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.75", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.75", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.75", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.75", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.74", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.74", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.74", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.74", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.73", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.73", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.73", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.73", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.72", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.71", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libicuuc.so.71", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/lib/libicuuc.so.71", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/libicuuc.so.71", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicuuc.so.70", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=2062664, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicudata.so.70", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=29476472, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libicui18n.so.70", O_RDONLY|O_CLOEXEC) = 21
+newfstatat(21, "", {st_mode=S_IFREG|0644, st_size=3328472, ...}, AT_EMPTY_PATH) = 0
+openat(AT_FDCWD, "/proc/self/status", O_RDONLY) = 23
+Unhandled exception. readlink("/usr", 0x7ffd160a6ec0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a6ec0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a6ec0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a6ec0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a6ec0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a6ec0, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Diagnostics.StackTrace.dll", {st_mode=S_IFREG|0644, st_size=27136, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Diagnostics.StackTrace.dll", O_RDONLY) = 23
+newfstatat(23, "", {st_mode=S_IFREG|0644, st_size=27136, ...}, AT_EMPTY_PATH) = 0
+newfstatat(24, "", {st_mode=S_IFREG|0644, st_size=27136, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffd160a6ff0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a6ff0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a6ff0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a6ff0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a6ff0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a6ff0, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Reflection.Metadata.dll", {st_mode=S_IFREG|0644, st_size=1087488, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Reflection.Metadata.dll", O_RDONLY) = 25
+newfstatat(25, "", {st_mode=S_IFREG|0644, st_size=1087488, ...}, AT_EMPTY_PATH) = 0
+newfstatat(26, "", {st_mode=S_IFREG|0644, st_size=1087488, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffd160a6ef0, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a6ef0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a6ef0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a6ef0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a6ef0, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a6ef0, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Collections.Immutable.dll", {st_mode=S_IFREG|0644, st_size=580608, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Collections.Immutable.dll", O_RDONLY) = 27
+newfstatat(27, "", {st_mode=S_IFREG|0644, st_size=580608, ...}, AT_EMPTY_PATH) = 0
+newfstatat(28, "", {st_mode=S_IFREG|0644, st_size=580608, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffd160a6c50, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a6c50, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a6c50, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a6c50, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a6c50, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a6c50, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Threading.dll", {st_mode=S_IFREG|0644, st_size=69632, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Threading.dll", O_RDONLY) = 29
+newfstatat(29, "", {st_mode=S_IFREG|0644, st_size=69632, ...}, AT_EMPTY_PATH) = 0
+newfstatat(30, "", {st_mode=S_IFREG|0644, st_size=69632, ...}, AT_EMPTY_PATH) = 0
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Private.CoreLib.pdb", 0x7ffd160a9d00, AT_SYMLINK_NOFOLLOW) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/Scenario Compilation.pdb", {st_mode=S_IFREG|0644, st_size=10684, ...}, AT_SYMLINK_NOFOLLOW) = 0
+openat(AT_FDCWD, "/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/Scenario Compilation.pdb", O_RDONLY|O_CLOEXEC) = 31
+newfstatat(31, "", {st_mode=S_IFREG|0644, st_size=10684, ...}, AT_EMPTY_PATH) = 0
+newfstatat(31, "", {st_mode=S_IFREG|0644, st_size=10684, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffd160a7310, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a7310, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a7310, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a7310, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a7310, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a7310, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Runtime.InteropServices.dll", {st_mode=S_IFREG|0644, st_size=41984, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Runtime.InteropServices.dll", O_RDONLY) = 32
+newfstatat(32, "", {st_mode=S_IFREG|0644, st_size=41984, ...}, AT_EMPTY_PATH) = 0
+newfstatat(33, "", {st_mode=S_IFREG|0644, st_size=41984, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffd160a6f50, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a6f50, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a6f50, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a6f50, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a6f50, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a6f50, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Text.Encoding.Extensions.dll", {st_mode=S_IFREG|0644, st_size=5632, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.Text.Encoding.Extensions.dll", O_RDONLY) = 34
+newfstatat(34, "", {st_mode=S_IFREG|0644, st_size=5632, ...}, AT_EMPTY_PATH) = 0
+newfstatat(35, "", {st_mode=S_IFREG|0644, st_size=5632, ...}, AT_EMPTY_PATH) = 0
+readlink("/usr", 0x7ffd160a6b70, 1023)  = -1 EINVAL (Invalid argument)
+readlink("/usr/lib", 0x7ffd160a6b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet", 0x7ffd160a6b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared", 0x7ffd160a6b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App", 0x7ffd160a6b70, 1023) = -1 EINVAL (Invalid argument)
+readlink("/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14", 0x7ffd160a6b70, 1023) = -1 EINVAL (Invalid argument)
+newfstatat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.IO.MemoryMappedFiles.dll", {st_mode=S_IFREG|0644, st_size=74752, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/dotnet/shared/Microsoft.NETCore.App/7.0.14/System.IO.MemoryMappedFiles.dll", O_RDONLY) = 36
+newfstatat(36, "", {st_mode=S_IFREG|0644, st_size=74752, ...}, AT_EMPTY_PATH) = 0
+newfstatat(37, "", {st_mode=S_IFREG|0644, st_size=74752, ...}, AT_EMPTY_PATH) = 0
+System.IO.IOException: The file '/home/eden/Projects/Final_Project_RavenDB/alice/example/voron/scenarios/testChecker/file1' already exists.
+   at System.IO.FileSystem.LinkOrCopyFile(String sourceFullPath, String destFullPath)
+   at System.IO.FileSystem.MoveFile(String sourceFullPath, String destFullPath, Boolean overwrite)
+   at System.IO.File.Move(String sourceFileName, String destFileName, Boolean overwrite)
+   at Program.<Main>$(String[] args)
+unlink("/tmp/clr-debug-pipe-18824-1009134-in") = 0
+unlink("/tmp/clr-debug-pipe-18824-1009134-out") = 0
+unlink("/tmp/dotnet-diagnostic-18824-1009134-socket") = 0
+--- SIGABRT {si_signo=SIGABRT, si_code=SI_TKILL, si_pid=18824, si_uid=1000} ---
++++ killed by SIGABRT +++

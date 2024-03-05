@@ -234,6 +234,8 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 					buf = ''.join(random.choice(data) for x in range(line.count))
 					fd = os.open(get_inode_file(line.inode), os.O_WRONLY)
 					os.lseek(fd, line.offset, os.SEEK_SET)
+
+					
 					os.write(fd, buf)
 					os.close(fd)
 					buf = ""
@@ -249,11 +251,28 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 					os.close(fd)
 				fd = os.open(get_inode_file(line.inode), os.O_WRONLY)
 				os.lseek(fd, line.offset, os.SEEK_SET)
+
+				
 				os.write(fd, buf)
 				os.close(fd)
 				buf = ""
 			writeable_toggle(get_inode_file(line.inode), old_mode)
 		elif line.op == 'stdout':
+
+
+			# /////// EDIT HERE
+
+			print len(line.data)
+			nums = []
+			for c in line.data:
+				nums.append(ord(c))
+			print nums
+
+			# for char in line.data.decode('string-escape'):
+			# 	print ord(char)
+
+			# print line.data.decode('string-escape')
+
 			output_stdout.write(line.data)
 		else:
 			assert line.op == 'sync'

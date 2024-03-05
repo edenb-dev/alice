@@ -79,6 +79,8 @@ innocent_syscalls = ["_exit","pread","_newselect","_sysctl","accept","accept4","
 
 innocent_syscalls += ['mtrace_mmap', 'mtrace_munmap', 'mtrace_thread_start']
 
+innocent_syscalls += ['syscall_334', 'prlimit64', 'syscall_318', 'syscall_324','syscall_435' ,'syscall_319', 'mknodat'] # HERE --------------------------------------------------------------
+
 # Some system calls have special 64-bit versions. The 64-bit versions
 # are not inherently different from the original versions, and strace
 # automatically converts their representation to look like the original.
@@ -714,6 +716,9 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 	elif parsed_line.syscall in ['fcntl', 'fcntl64']:
 		fd = safe_string_to_int(parsed_line.args[0])
 		cmd = parsed_line.args[1]
+
+		cmd = cmd.replace('_CLOEXEC','')
+
 		assert cmd in ['F_GETFD', 'F_SETFD', 'F_GETFL', 'F_SETFL', 'F_SETLK', 'F_SETLKW', 'F_GETLK', 'F_SETLK64', 'F_SETLKW64', 'F_GETLK64', 'F_DUPFD']
 
 		tracker = None
@@ -943,8 +948,8 @@ def get_micro_ops():
 
 	path_inode_map = get_path_inode_map(aliceconfig().scratchpad_dir)
 
-	if not aliceconfig().ignore_stacktrace:
-		symtab = pickle.load(open(aliceconfig().strace_file_prefix + '.symtab'))
+	# if not aliceconfig().ignore_stacktrace:
+	# 	symtab = pickle.load(open(aliceconfig().strace_file_prefix + '.symtab'))
 	micro_operations = []
 	for row in rows:
 		syscall_tid = row[0]

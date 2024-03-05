@@ -54,6 +54,9 @@ def create_symtab(fn_list):
 	d = defaultdict(set)
 
 	for e in return_addrs_set:
+
+		print
+
 		try:
 			filename, addr_offset, original_addr = e.split(':')
 		except:

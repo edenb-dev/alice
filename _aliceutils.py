@@ -43,7 +43,7 @@ def init_aliceconfig(args):
 	parser.add_argument('--debug_level', dest = 'debug_level', type = int, default = 0)
 	parser.add_argument('--ignore_ioctl', dest = 'ignore_ioctl', type = list, default = [])
 	parser.add_argument('--ignore_mmap', dest = 'ignore_mmap', type = bool, default = False)
-	parser.add_argument('--ignore_stacktrace', dest = 'ignore_stacktrace', type = bool, default = False)
+	parser.add_argument('--ignore_stacktrace', dest = 'ignore_stacktrace', type = bool, default = True)
 
 	__aliceconfig = parser.parse_args('')
 	for key in __aliceconfig.__dict__:

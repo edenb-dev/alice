@@ -1,0 +1,39 @@
+12:29:48.690345 execve("../HelloWorld", [...], [/* 25 vars */]) = 0
+12:29:48.691748 brk(0)                  = 0x55c5e975a000
+12:29:48.692310 arch_prctl(0x3001 /* ARCH_??? */) = -1 EINVAL (Invalid argument)
+12:29:48.692858 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f050fc93000
+12:29:48.693041 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+12:29:48.693593 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 7
+12:29:48.694634 newfstatat(7, "", {st_mode=S_IFREG|0644, st_size=27367, ...}, AT_EMPTY_PATH) = 0
+12:29:48.695647 mmap(NULL, 27367, PROT_READ, MAP_PRIVATE, 7, 0) = 0x7f050fc8c000
+12:29:48.695819 close(7)                = 0
+12:29:48.695979 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 7
+12:29:48.696906 read(7, ""..., 832)     = 832
+12:29:48.697919 pread(7, ""..., 784, 64) = 784
+12:29:48.698899 pread(7, ""..., 48, 848) = 48
+12:29:48.699898 pread(7, ""..., 68, 896) = 68
+12:29:48.700865 newfstatat(7, "", {st_mode=S_IFREG|0755, st_size=2216304, ...}, AT_EMPTY_PATH) = 0
+12:29:48.701791 pread(7, ""..., 784, 64) = 784
+12:29:48.702743 mmap(NULL, 2260560, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 7, 0) = 0x7f050fa64000
+12:29:48.702965 mmap(0x7f050fa8c000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 7, 0x28000) = 0x7f050fa8c000
+12:29:48.703187 mmap(0x7f050fc21000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 7, 0x1bd000) = 0x7f050fc21000
+12:29:48.703410 mmap(0x7f050fc79000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 7, 0x214000) = 0x7f050fc79000
+12:29:48.703653 mmap(0x7f050fc7f000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f050fc7f000
+12:29:48.703888 close(7)                = 0
+12:29:48.704117 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f050fa61000
+12:29:48.704303 arch_prctl(ARCH_SET_FS, 0x7f050fa61740) = 0
+12:29:48.704896 set_tid_address(0x7f050fa61a10) = 1177
+12:29:48.705510 set_robust_list(0x7f050fa61a20, 24) = 0
+12:29:48.706122 syscall_334(0x7f050fa620e0, 0x20, 0, 0x53053053, 0, 0) = 0
+12:29:48.706333 mprotect(0x7f050fc79000, 16384, PROT_READ) = 0
+12:29:48.706514 mprotect(0x55c5e922c000, 4096, PROT_READ) = 0
+12:29:48.706683 mprotect(0x7f050fccd000, 8192, PROT_READ) = 0
+12:29:48.706859 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+12:29:48.707710 munmap(0x7f050fc8c000, 27367) = 0
+12:29:48.707953 newfstatat(1, "", {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 0), ...}, AT_EMPTY_PATH) = 0
+12:29:48.709300 syscall_318(0x7f050fc844d8, 0x8, 0x1, 0x1000, 0x7f050fc7fa70, 0x7f050fc9b040) = 0x8
+12:29:48.709574 brk(0)                  = 0x55c5e975a000
+12:29:48.711322 brk(0x55c5e977b000)     = 0x55c5e977b000
+12:29:48.713022 write(1, ""..., 14)     = 14
+12:29:48.714217 exit_group(0)           = ?
+12:29:48.715013 +++ exited with 0 +++

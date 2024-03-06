@@ -1,0 +1,15 @@
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/bin/Debug/net7.0/helloworld
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/bin/Debug/net7.0/helloworld.deps.json
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/bin/Debug/net7.0/helloworld.runtimeconfig.json
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/bin/Debug/net7.0/helloworld.dll
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/bin/Debug/net7.0/helloworld.pdb
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/obj/Debug/net7.0/helloworld.csproj.AssemblyReference.cache
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/obj/Debug/net7.0/helloworld.GeneratedMSBuildEditorConfig.editorconfig
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/obj/Debug/net7.0/helloworld.AssemblyInfoInputs.cache
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/obj/Debug/net7.0/helloworld.AssemblyInfo.cs
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/obj/Debug/net7.0/helloworld.csproj.CoreCompileInputs.cache
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/obj/Debug/net7.0/helloworld.dll
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/obj/Debug/net7.0/refint/helloworld.dll
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/obj/Debug/net7.0/helloworld.pdb
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/obj/Debug/net7.0/helloworld.genruntimeconfig.cache
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/Project/obj/Debug/net7.0/ref/helloworld.dll

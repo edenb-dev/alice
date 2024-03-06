@@ -1,0 +1,2 @@
+/run/shm/alice-1907/reconstructeddir-0			stdout: Hello, World!
+

@@ -1,0 +1,1 @@
+/run/shm/alice-6308/reconstructeddir-0			stdout: [?1h=

@@ -1,0 +1,8 @@
+[]
+[ /usr/lib/x86_64-linux-gnu/libc.so.6:0x948b7:0x7f29bebb88b7 /usr/lib/x86_64-linux-gnu/libc.so.6:0x126a40:0x7f29bec4aa40 ]
+[]
+[]
+[]
+[]
+[]
+[ /usr/lib/x86_64-linux-gnu/libc.so.6:0x114a0c:0x7f29bec38a0c /home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/CS_Example/HelloWorld:0x98576f:0x555c415b976f /usr/lib/x86_64-linux-gnu/libc.so.6:0x94ac3:0x7f29bebb8ac3 /usr/lib/x86_64-linux-gnu/libc.so.6:0x126a40:0x7f29bec4aa40 ]

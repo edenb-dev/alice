@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "GzGLKPg1LJNOUeCacSMsMUnMXLoMWikwrVz9mIOiipQbUQ8B99idWh6+Bw/AUydIOwXxMg0VzSxFpLtiyym3sw==",
+  "success": true,
+  "projectFilePath": "/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/Checker/checker.csproj",
+  "expectedPackageFiles": [
+    "/home/eden/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/7.0.14/microsoft.netcore.app.runtime.linux-x64.7.0.14.nupkg.sha512",
+    "/home/eden/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/7.0.14/microsoft.aspnetcore.app.runtime.linux-x64.7.0.14.nupkg.sha512",
+    "/home/eden/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.14/microsoft.netcore.app.host.linux-x64.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

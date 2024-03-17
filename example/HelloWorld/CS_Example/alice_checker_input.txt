@@ -1,0 +1,7 @@
+======== START ========
+/run/shm/alice-23939/reconstructeddir-0
+/run/shm/alice-23939/reconstructeddir-0.input_stdout
+0
+========= END =========
+
+

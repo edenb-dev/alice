@@ -1,0 +1,2 @@
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/Checker/bin/Debug/net7.0/linux-x64/publish/checker.pdb
+/home/eden/Projects/Final_Project_RavenDB/alice/example/HelloWorld/Checker/bin/Debug/net7.0/linux-x64/publish/checker

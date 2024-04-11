@@ -1,0 +1,14 @@
+10:51:26.294046 syscall_334(0x7fc6766f1fe0, 0x20, 0, 0x53053053, 0x80, 0x7ffdb1553d4f) = 0
+10:51:26.294249 set_robust_list(0x7fc6766f1920, 24) = 0
+10:51:26.297902 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+10:51:26.298144 sched_getaffinity(2211, 128, 0x7fc6766f0cb0) = 32
+10:51:26.298886 sched_setaffinity(0, 128, 0x7fc6766f0cb0) = 0
+10:51:26.299539 sigaltstack(NULL, {ss_sp=0, ss_flags=SS_DISABLE, ss_size=0}) = 0
+10:51:26.300330 mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fc675eed000
+10:51:26.300584 mprotect(0x7fc675eed000, 4096, PROT_NONE) = 0
+10:51:26.300796 sigaltstack({ss_sp=0x7fc675eed000, ss_flags=0, ss_size=16384}, NULL) = 0
+10:51:26.301629 gettid()                = 2217
+10:51:26.301833 futex(0x55b6eeabd3a0, FUTEX_WAKE_PRIVATE, 1) = 1
+10:51:26.305308 futex(0x55b6eeabd350, FUTEX_WAKE_PRIVATE, 1) = 0
+10:51:26.308585 openat(AT_FDCWD, "/tmp/clr-debug-pipe-2211-2091444-in", O_RDONLY <unfinished ...>
+10:51:28.663330 +++ exited with 0 +++

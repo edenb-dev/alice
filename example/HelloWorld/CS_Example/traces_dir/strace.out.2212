@@ -1,0 +1,17 @@
+10:51:25.962506 syscall_334(0x7fc67771cfe0, 0x20, 0, 0x53053053, 0x80, 0x7ffdb15540cf) = 0
+10:51:25.962666 set_robust_list(0x7fc67771c920, 24) = 0
+10:51:25.963169 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+10:51:25.963335 sched_getaffinity(2211, 128, 0x7fc67771bcb0) = 32
+10:51:25.964005 sched_setaffinity(0, 128, 0x7fc67771bcb0) = 0
+10:51:25.964681 gettid()                = 2212
+10:51:25.964998 futex(0x55b6eea50620, FUTEX_WAKE_PRIVATE, 1) = 1
+10:51:25.967979 futex(0x55b6eea505d0, FUTEX_WAKE_PRIVATE, 1) = 0
+10:51:25.970725 poll([...], 1, 4294967295) = 1 ([...])
+10:51:28.649705 read(7, ""..., 1)       = 1
+10:51:28.650770 close(8)                = 0
+10:51:28.650886 poll([...], 1, 1000)    = 1 ([...])
+10:51:28.651917 read(7, "", 1)          = 0
+10:51:28.652942 futex(0x55b6eea506d0, FUTEX_WAKE_PRIVATE, 1) = 1
+10:51:28.657031 futex(0x55b6eea50680, FUTEX_WAKE_PRIVATE, 1) = 1
+10:51:28.660861 poll(0, 0, 4294967295 <unfinished ...>
+10:51:28.663375 +++ exited with 0 +++

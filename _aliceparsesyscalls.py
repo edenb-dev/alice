@@ -89,6 +89,8 @@ equivalent_syscall['pwrite64'] = 'pwrite'
 equivalent_syscall['_llseek'] = 'lseek'
 equivalent_syscall['ftruncate64'] = 'ftruncate'
 
+
+
 sync_ops = set(['fsync', 'fdatasync', 'file_sync_range', 'sync'])
 expansive_ops = set(['append', 'trunc', 'write', 'unlink', 'rename'])
 pseudo_ops = sync_ops | set(['stdout'])
@@ -471,13 +473,51 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 	elif parsed_line.syscall in ['write', 'writev', 'pwrite', 'pwritev']:	
 		fd = safe_string_to_int(parsed_line.args[0])
 		name = None
+
+
+		# PRINT
+		dump_file = eval(parsed_line.args[-2])
+		dump_offset = safe_string_to_int(parsed_line.args[-1])
+
+		count = safe_string_to_int(parsed_line.args[2])
+		fd_data = os.open(dump_file, os.O_RDONLY)
+		os.lseek(fd_data, dump_offset, os.SEEK_SET)
+		buf = os.read(fd_data, count)
+		os.close(fd_data)
+
+		print "==== New Write ===="
+		print "Path: " + dump_file
+		print "Data: " + buf
+		print "FD:   " + str(fd)
+		print "==== END ====\n\n"
+		# PRINT 
+
+
+
+
 		if fdtracker_unwatched.is_watched(fd):
 			name = fdtracker_unwatched.get_name(fd)
 		elif fdtracker.is_watched(fd):
 			name = fdtracker.get_name(fd)
 		if fdtracker.is_watched(fd) or fd == 1:
+
 			dump_file = eval(parsed_line.args[-2])
 			dump_offset = safe_string_to_int(parsed_line.args[-1])
+		
+			
+			# PRINT
+
+			count = safe_string_to_int(parsed_line.args[2])
+			fd_data = os.open(dump_file, os.O_RDONLY)
+			os.lseek(fd_data, dump_offset, os.SEEK_SET)
+			buf = os.read(fd_data, count)
+			os.close(fd_data)
+
+			print "==== is_watched or fd == 1 ====   stdout => " + buf + "\n\n"
+			# PRINT
+
+
+
 			if fd == 1:
 				count = safe_string_to_int(parsed_line.args[2])
 				fd_data = os.open(dump_file, os.O_RDONLY)
@@ -717,10 +757,10 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 		fd = safe_string_to_int(parsed_line.args[0])
 		cmd = parsed_line.args[1]
 
-		cmd = cmd.replace('_CLOEXEC','')
-
-		assert cmd in ['F_GETFD', 'F_SETFD', 'F_GETFL', 'F_SETFL', 'F_SETLK', 'F_SETLKW', 'F_GETLK', 'F_SETLK64', 'F_SETLKW64', 'F_GETLK64', 'F_DUPFD']
-
+		# cmd = cmd.replace('_CLOEXEC','') # ----------------------------------------- ???????
+		
+		assert cmd in ['F_GETFD', 'F_SETFD', 'F_GETFL', 'F_SETFL', 'F_SETLK', 'F_SETLKW', 'F_GETLK', 'F_SETLK64', 'F_SETLKW64', 'F_GETLK64', 'F_DUPFD'] or cmd in ['F_DUPFD_CLOEXEC']
+		
 		tracker = None
 		if fdtracker.is_watched(fd):
 			tracker = fdtracker
@@ -728,13 +768,15 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 			tracker = fdtracker_unwatched
 
 		if tracker:
+
 			if cmd == 'F_SETFD':
 				assert parsed_line.args[2] in ['FD_CLOEXEC', '0']
 				if parsed_line.args[2] == 'FD_CLOEXEC':
 					tracker.get_attribs(fd).add('O_CLOEXEC')
 				else:
 					tracker.get_attribs(fd).discard('O_CLOEXEC')
-			elif cmd == 'F_DUPFD' and eval(parsed_line.ret) != -1:
+
+			elif (cmd == 'F_DUPFD' or  cmd == 'F_DUPFD_CLOEXEC') and eval(parsed_line.ret) != -1: # ----------------------------------------- ???????
 				new_fd = eval(parsed_line.ret)
 				old_fd = eval(parsed_line.args[0])
 				tracker.set_equivalent(old_fd, new_fd)
@@ -924,16 +966,24 @@ def get_micro_ops():
 			if parsed_line:
 				# Replace any system calls that have a 32-bit
 				# equivalent with the equivalent
-				if parsed_line.syscall in equivalent_syscall:
+	
+				# print parsed_line.syscall
+
+				if parsed_line.syscall in equivalent_syscall: #--------------------------------------------------------------- ??????????????????????
 					parsed_line.syscall = equivalent_syscall[parsed_line.syscall]
 				# On a write, take care of the offset within the dump file 
 				if parsed_line.syscall in ['write', 'writev', 'pwrite', 'pwritev', 'mwrite']:
 					if parsed_line.syscall == 'pwrite':
 						write_size = safe_string_to_int(parsed_line.args[-2])
+						
 					else:
 						write_size = safe_string_to_int(parsed_line.args[-1])
+						
 					m = re.search(r'\) += [^,]*$', line)
+					
 					line = line[ 0 : m.start(0) ] + ', "' + dump_file + '", ' + str(dump_offset) + line[m.start(0) : ]
+					# print line
+					# print parsed_line
 					dump_offset += write_size
 				stacktrace = '[]\n' if aliceconfig().ignore_stacktrace else stackinfo_file.readline()
 				if parsed_line.syscall in innocent_syscalls or parsed_line.syscall.startswith("ignore_"):

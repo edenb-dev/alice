@@ -260,13 +260,13 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 		elif line.op == 'stdout':
 
 
-			# /////// EDIT HERE
+			# /////// EDIT HERE ??????????
 
-			print len(line.data)
-			nums = []
-			for c in line.data:
-				nums.append(ord(c))
-			print nums
+			# print len(line.data)
+			# nums = []
+			# for c in line.data:
+			# 	nums.append(ord(c))
+			# print nums
 
 			# for char in line.data.decode('string-escape'):
 			# 	print ord(char)

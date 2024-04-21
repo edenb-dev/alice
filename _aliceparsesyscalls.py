@@ -798,7 +798,7 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 				new_fd = eval(parsed_line.ret)
 				old_fd = eval(parsed_line.args[0])
 				tracker.set_equivalent(old_fd, new_fd)
-				# print str(old_fd) + " -> " + str(new_fd)
+				print str(old_fd) + " -> " + str(new_fd)
 			elif cmd == 'F_SETFL':
 				assert tracker == fdtracker_unwatched
 	elif parsed_line.syscall in ['mmap', 'mmap2']:

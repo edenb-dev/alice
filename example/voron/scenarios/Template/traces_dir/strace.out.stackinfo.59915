@@ -1,0 +1,7 @@
+[]
+[ /usr/lib/x86_64-linux-gnu/libc.so.6:0x948b7:0x7fbcf0e7d8b7 /usr/lib/x86_64-linux-gnu/libc.so.6:0x126a40:0x7fbcf0f0fa40 ]
+[]
+[]
+[]
+[]
+[ /usr/lib/x86_64-linux-gnu/libc.so.6:0x114a0c:0x7fbcf0efda0c /home/lior/final_project/alice/example/voron/scenarios/Template/Scenario:0x98576f:0x5649b5a6f76f /usr/lib/x86_64-linux-gnu/libc.so.6:0x94ac3:0x7fbcf0e7dac3 /usr/lib/x86_64-linux-gnu/libc.so.6:0x126a40:0x7fbcf0f0fa40 ]

@@ -1,0 +1,7 @@
+[]
+[ /usr/lib/x86_64-linux-gnu/libc.so.6:0x948b7:0x7fcd1b50b8b7 /usr/lib/x86_64-linux-gnu/libc.so.6:0x126a40:0x7fcd1b59da40 ]
+[]
+[]
+[]
+[]
+[ /usr/lib/x86_64-linux-gnu/libc.so.6:0x114a0c:0x7fcd1b58ba0c /home/lior/final_project/alice/example/HelloWorld/CS_Example/HelloWorld:0x98576f:0x55633798276f /usr/lib/x86_64-linux-gnu/libc.so.6:0x94ac3:0x7fcd1b50bac3 /usr/lib/x86_64-linux-gnu/libc.so.6:0x126a40:0x7fcd1b59da40 ]

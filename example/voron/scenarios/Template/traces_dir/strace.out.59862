@@ -1,0 +1,14 @@
+20:14:53.955153 syscall_334(0x7fbcefdb2fe0, 0x20, 0, 0x53053053, 0x80, 0x7fff7f1eb97f) = 0
+20:14:53.958579 set_robust_list(0x7fbcefdb2920, 24) = 0
+20:14:53.959280 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+20:14:53.959518 sched_getaffinity(59857, 128, 0x7fbcefdb1cb0) = 32
+20:14:53.960168 sched_setaffinity(0, 128, 0x7fbcefdb1cb0) = 0
+20:14:53.960630 sigaltstack(NULL, {ss_sp=0, ss_flags=SS_DISABLE, ss_size=0}) = 0
+20:14:53.961317 mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fbcef5ae000
+20:14:53.961626 mprotect(0x7fbcef5ae000, 4096, PROT_NONE) = 0
+20:14:53.961852 sigaltstack({ss_sp=0x7fbcef5ae000, ss_flags=0, ss_size=16384}, NULL) = 0
+20:14:53.962480 gettid()                = 59862
+20:14:53.962703 futex(0x5649b73b2510, FUTEX_WAKE_PRIVATE, 1) = 1
+20:14:53.964918 futex(0x5649b73b24c0, FUTEX_WAKE_PRIVATE, 1) = 0
+20:14:53.967111 openat(AT_FDCWD, "/tmp/clr-debug-pipe-59857-392933-in", O_RDONLY <unfinished ...>
+20:15:09.486488 +++ exited with 0 +++

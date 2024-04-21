@@ -1,8 +1,0 @@
-[]
-[ /usr/lib/x86_64-linux-gnu/libc.so.6:0x948b7:0x7fcba6a7e8b7 /usr/lib/x86_64-linux-gnu/libc.so.6:0x126a40:0x7fcba6b10a40 ]
-[]
-[]
-[]
-[]
-[]
-[ /usr/lib/x86_64-linux-gnu/libc.so.6:0x114a0c:0x7fcba6afea0c /home/eden/Projects/Final_Project_RavenDB/alice/scenario_builder/compiled/test1/initial/test_complexCharAdd:0x98576f:0x55a8396f476f /usr/lib/x86_64-linux-gnu/libc.so.6:0x94ac3:0x7fcba6a7eac3 /usr/lib/x86_64-linux-gnu/libc.so.6:0x126a40:0x7fcba6b10a40 ]

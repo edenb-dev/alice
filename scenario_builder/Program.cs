@@ -14,7 +14,17 @@ public class Program
     {
 
         // check_basicAdd(args);
-        check_complexCharAdd(args);
+        //check_complexCharAdd(args);
+        {
+            using var f = File.Create("yellow");
+            f.Write("world"u8);
+        }
+        File.Move("yellow", "file1");
+        Console.WriteLine("DoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDone");
+
+
+
+
     }
 
     public static void test_basicAdd()

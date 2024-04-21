@@ -1,0 +1,21 @@
+20:14:53.969492 syscall_334(0x7fbcef5adfe0, 0x20, 0, 0x53053053, 0x80, 0x7fff7f1ebbaf) = 0
+20:14:53.970899 set_robust_list(0x7fbcef5ad920, 24) = 0
+20:14:53.971488 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+20:14:53.971934 sched_getaffinity(59857, 128, 0x7fbcef5accb0) = 32
+20:14:53.972712 sched_setaffinity(0, 128, 0x7fbcef5accb0) = 0
+20:14:53.973330 sigaltstack(NULL, {ss_sp=0, ss_flags=SS_DISABLE, ss_size=0}) = 0
+20:14:53.973969 mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fbceeda9000
+20:14:53.974239 mprotect(0x7fbceeda9000, 4096, PROT_NONE) = 0
+20:14:53.974630 sigaltstack({ss_sp=0x7fbceeda9000, ss_flags=0, ss_size=16384}, NULL) = 0
+20:14:53.975297 gettid()                = 59864
+20:14:53.975493 pipe2([15, 16], O_CLOEXEC) = 0
+20:14:53.976135 futex(0x5649b73b2dd0, FUTEX_WAKE_PRIVATE, 1) = 1
+20:14:53.977734 futex(0x5649b73b2d80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:14:53.979121 read(15, ""..., 1)      = 1
+20:14:53.981992 close(15)               = 0
+20:14:53.983716 close(16)               = 0
+20:14:53.985260 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7fbce0000000
+20:14:53.986910 munmap(0x7fbce4000000, 67108864) = 0
+20:14:53.988999 mprotect(0x7fbce0000000, 135168, PROT_READ|PROT_WRITE) = 0
+20:14:53.990659 futex(0x5649b73b2e80, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, ffffffff <unfinished ...>
+20:15:09.486466 +++ exited with 0 +++

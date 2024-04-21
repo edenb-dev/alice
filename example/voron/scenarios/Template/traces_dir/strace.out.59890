@@ -1,0 +1,84 @@
+20:14:59.465253 syscall_334(0x7fbcec1d3fe0, 0x20, 0, 0x53053053, 0x80, 0x7fff7f1eaaef) = 0
+20:14:59.469847 set_robust_list(0x7fbcec1d3920, 24) = 0
+20:14:59.471504 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+20:14:59.471885 sched_getaffinity(59857, 128, 0x7fbcec1d2cb0) = 32
+20:14:59.473859 sched_setaffinity(0, 128, 0x7fbcec1d2cb0) = 0
+20:14:59.474971 sigaltstack(NULL, {ss_sp=0, ss_flags=SS_DISABLE, ss_size=0}) = 0
+20:14:59.476209 mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fbcec418000
+20:14:59.476667 mprotect(0x7fbcec418000, 4096, PROT_NONE) = 0
+20:14:59.477096 sigaltstack({ss_sp=0x7fbcec418000, ss_flags=0, ss_size=16384}, NULL) = 0
+20:14:59.479068 gettid()                = 59890
+20:14:59.479434 pipe2([65, 67], O_CLOEXEC) = 0
+20:14:59.480598 futex(0x5649b78ebc20, FUTEX_WAKE_PRIVATE, 1) = 1
+20:14:59.481773 read(65, ""..., 1)      = 1
+20:14:59.539865 close(65)               = 0
+20:14:59.546329 close(67)               = 0
+20:14:59.556312 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f7c34000000
+20:14:59.561023 munmap(0x7f7c38000000, 67108864) = 0
+20:14:59.565051 mprotect(0x7f7c34000000, 135168, PROT_READ|PROT_WRITE) = 0
+20:14:59.572696 sched_getaffinity(59890, 32, 0x7f7c34000b70) = 32
+20:14:59.581618 sched_getaffinity(59890, 32, 0x7f7c34000c40) = 32
+20:14:59.590227 getrusage(RUSAGE_SELF, {ru_utime={0, 293375}, ru_stime={0, 275039}, ...}) = 0
+20:14:59.593819 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED, 12, 0x20b000) = 0x7fbcf1371000
+20:14:59.594121 munmap(0x7fbcf13af000, 4096) = 0
+20:14:59.604359 futex(0x5649b733cdf8, FUTEX_WAKE_PRIVATE, 1) = 1
+20:14:59.614448 futex(0x5649b733cda8, FUTEX_WAKE_PRIVATE, 1) = 0
+20:14:59.625046 mprotect(0x564937ac5000, 4096, PROT_READ|PROT_WRITE) = 0
+20:14:59.627328 futex(0x5649b739cf0c, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, ffffffff) = -1 EAGAIN (Resource temporarily unavailable)
+20:14:59.637886 futex(0x5649b739ceb8, FUTEX_WAIT_PRIVATE, 2, NULL) = -1 EAGAIN (Resource temporarily unavailable)
+20:14:59.647027 futex(0x5649b739ceb8, FUTEX_WAKE_PRIVATE, 1) = 0
+20:14:59.659611 mprotect(0x564937ab8000, 4096, PROT_READ|PROT_WRITE) = 0
+20:14:59.661690 futex(0x5649b734daec, FUTEX_WAKE_PRIVATE, 1) = 1
+20:14:59.673337 mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_SHARED, 12, 0x20b000) = 0x7fbcf1371000
+20:14:59.674432 munmap(0x7fbcf13af000, 4096) = 0
+20:14:59.685402 futex(0x5649b739cd2c, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, ffffffff) = -1 EAGAIN (Resource temporarily unavailable)
+20:14:59.690110 futex(0x5649b739ccd8, FUTEX_WAKE_PRIVATE, 1) = 0
+20:14:59.694200 futex(0x5649b739cf08, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, ffffffff) = 0
+20:14:59.713954 futex(0x5649b739ceb8, FUTEX_WAKE_PRIVATE, 1) = 0
+20:14:59.721970 futex(0x5649b78ebcd0, FUTEX_WAIT_BITSET_PRIVATE, 0, {3936, 214116376}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:00.223569 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:00.231048 getrusage(RUSAGE_SELF, {ru_utime={0, 298838}, ru_stime={0, 298838}, ...}) = 0
+20:15:00.240746 futex(0x5649b78ebcd0, FUTEX_WAIT_BITSET_PRIVATE, 0, {3936, 728414018}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:00.738499 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:00.741571 getrusage(RUSAGE_SELF, {ru_utime={0, 313995}, ru_stime={0, 313995}, ...}) = 0
+20:15:00.747400 futex(0x5649b78ebcd0, FUTEX_WAIT_BITSET_PRIVATE|FUTEX_CLOCK_REALTIME, 0, NULL, ffffffff) = 0
+20:15:02.418761 futex(0x5649b78ebc80, FUTEX_WAIT_PRIVATE, 2, NULL) = 0
+20:15:02.460414 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:02.481166 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3938, 963281364}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:02.974730 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:02.980442 getrusage(RUSAGE_SELF, {ru_utime={0, 398855}, ru_stime={0, 368174}, ...}) = 0
+20:15:02.983836 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3939, 474329769}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:03.485479 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:03.489340 getrusage(RUSAGE_SELF, {ru_utime={0, 414269}, ru_stime={0, 394061}, ...}) = 0
+20:15:03.494264 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3939, 986359992}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:04.019078 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:04.059300 getrusage(RUSAGE_SELF, {ru_utime={0, 431939}, ru_stime={0, 401086}, ...}) = 0
+20:15:04.075035 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3940, 563682490}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:04.582479 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:04.598966 getrusage(RUSAGE_SELF, {ru_utime={0, 453152}, ru_stime={0, 401658}, ...}) = 0
+20:15:04.633325 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3941, 100511938}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:05.117254 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:05.142455 getrusage(RUSAGE_SELF, {ru_utime={0, 466141}, ru_stime={0, 403989}, ...}) = 0
+20:15:05.157511 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3941, 638119507}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:05.681861 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:05.715990 getrusage(RUSAGE_SELF, {ru_utime={0, 477305}, ru_stime={0, 413664}, ...}) = 0
+20:15:05.749312 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3942, 211527161}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:06.236630 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:06.275773 getrusage(RUSAGE_SELF, {ru_utime={0, 492162}, ru_stime={0, 417268}, ...}) = 0
+20:15:06.290935 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3942, 771841372}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:06.789048 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:06.818246 getrusage(RUSAGE_SELF, {ru_utime={0, 497395}, ru_stime={0, 432518}, ...}) = 0
+20:15:06.827024 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3943, 315608809}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:07.364059 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:07.413797 getrusage(RUSAGE_SELF, {ru_utime={0, 516027}, ru_stime={0, 439172}, ...}) = 0
+20:15:07.432422 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3943, 916235816}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:07.936126 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:07.968848 getrusage(RUSAGE_SELF, {ru_utime={0, 524688}, ru_stime={0, 439172}, ...}) = 0
+20:15:07.991814 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3944, 471948110}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:08.483257 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:08.492345 getrusage(RUSAGE_SELF, {ru_utime={0, 530447}, ru_stime={0, 443843}, ...}) = 0
+20:15:08.499345 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3944, 988887478}, ffffffff) = -1 ETIMEDOUT (Connection timed out)
+20:15:09.012877 futex(0x5649b78ebc80, FUTEX_WAKE_PRIVATE, 1) = 0
+20:15:09.035015 getrusage(RUSAGE_SELF, {ru_utime={0, 538285}, ru_stime={0, 450402}, ...}) = 0
+20:15:09.054262 futex(0x5649b78ebcd4, FUTEX_WAIT_BITSET_PRIVATE, 0, {3945, 539671760}, ffffffff <unfinished ...>
+20:15:09.486300 +++ exited with 0 +++

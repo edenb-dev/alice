@@ -32,7 +32,7 @@ __author__ = "Thanumalayan Sankaranarayana Pillai"
 __copyright__ = "Copyright 2014, Thanumalayan Sankaranarayana Pillai"
 __credits__ = ["Thanumalayan Sankaranarayana Pillai", "Vijay Chidambaram",
 	"Ramnatthan Alagappan", "Samer Al-Kiswany"]
-__license__ = "MIT"
+__license__ = "MIT"	
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--checker', required = True, help = 'Location of the checker')

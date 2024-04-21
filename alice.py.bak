@@ -35,7 +35,7 @@ import signal
 import _aliceparsesyscalls
 import pdb
 import cProfile
-import queue
+import Queue
 import threading
 import time
 import pprint
@@ -52,10 +52,10 @@ __credits__ = ["Thanumalayan Sankaranarayana Pillai", "Vijay Chidambaram",
 	"Ramnatthan Alagappan", "Samer Al-Kiswany"]
 __license__ = "MIT"
 
-print(colorize('-------------------------------------------------------------------------------', 1))
-print('ALICE tool version 0.0.1. Please go through the documentation, particularly the')
-print('listed caveats and limitations, before deriving any inferences from this tool. ')
-print(colorize('-------------------------------------------------------------------------------', 1))
+print colorize('-------------------------------------------------------------------------------', 1)
+print 'ALICE tool version 0.0.1. Please go through the documentation, particularly the'
+print 'listed caveats and limitations, before deriving any inferences from this tool. '
+print colorize('-------------------------------------------------------------------------------', 1)
 
 cached_rows = None
 cached_dirinode_map = {}
@@ -69,10 +69,10 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 			return False
 
 	def get_inode_file(inode, mode = None):
-		assert isinstance(inode, int)
+		assert isinstance(inode, (int, long))
 		if not get_stat(replay_dir + '/.inodes/' + str(inode)):
 			if mode == None:
-				mode = 0o666
+				mode = 0666
 			if type(mode) == str:
 				mode = safe_string_to_int(mode)
 			fd = os.open(replay_dir + '/.inodes/' + str(inode), os.O_CREAT | os.O_WRONLY, mode)
@@ -82,7 +82,7 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 
 	dirinode_map = {} # From initial_inode to replayed_directory_path
 	def is_linked_inode_directory(inode):
-		assert isinstance(inode, int)
+		assert isinstance(inode, (int, long))
 		if inode not in dirinode_map:
 			return False
 		if dirinode_map[inode] == replay_dir + '/.inodes/' + str(inode):
@@ -90,10 +90,10 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 		return True
 
 	def get_inode_directory(inode, mode = None):
-		assert isinstance(inode, int)
+		assert isinstance(inode, (int, long))
 		if inode not in dirinode_map:
 			if mode == None:
-				mode = 0o777
+				mode = 0777
 			if type(mode) == str:
 				mode = safe_string_to_int(mode)
 			os.mkdir(replay_dir + '/.inodes/' + str(inode), mode)
@@ -101,7 +101,7 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 		return dirinode_map[inode]
 
 	def set_inode_directory(inode, dir_path):
-		assert isinstance(inode, int)
+		assert isinstance(inode, (int, long))
 		dirinode_map[inode] = dir_path
 
 	def initialize_inode_links(initial_paths_inode_map):
@@ -109,12 +109,12 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 		assert len(final_paths_inode_map) == len(initial_paths_inode_map)
 
 		# Asserting there are no hardlinks on the initial list - if there were, 'cp -R' wouldn't have worked correctly.
-		initial_inodes_list = [inode for (inode, entry_type) in list(initial_paths_inode_map.values())]
+		initial_inodes_list = [inode for (inode, entry_type) in initial_paths_inode_map.values()]
 		assert len(initial_inodes_list) == len(set(initial_inodes_list))
 
 		os.system("mkdir " + replay_dir + '/.inodes')
 
-		for path in list(initial_paths_inode_map.keys()):
+		for path in initial_paths_inode_map.keys():
 			final_path = path.replace(aliceconfig().scratchpad_dir, replay_dir, 1)
 			assert final_path in final_paths_inode_map
 			(initial_inode, entry_type) = initial_paths_inode_map[path]
@@ -327,15 +327,15 @@ class Replayer:
 				tid_info = str(self.micro_ops[i].hidden_pid) + '\t' + str(self.micro_ops[i].hidden_tid) + '\t'
 			if show_time:
 				tid_info += self.micro_ops[i].hidden_time + '\t'
-			print((micro_id + '\t' + tid_info + str(self.micro_ops[i])))
+			print(micro_id + '\t' + tid_info + str(self.micro_ops[i]))
 			for j in range(0, len(self.micro_ops[i].hidden_disk_ops)):
 				disk_op_str = str(self.micro_ops[i].hidden_disk_ops[j])
 				if self.micro_ops[i].hidden_disk_ops[j].hidden_omitted:
 					disk_op_str = colorize(disk_op_str, 3)
 				if show_diskops:
-					print(('\t' + str(j) + '\t' + disk_op_str))
+					print('\t' + str(j) + '\t' + disk_op_str)
 				if i == self.__micro_end and j == self.__disk_end:
-					print((colorize('-------------------------------------', 1)))
+					print(colorize('-------------------------------------', 1))
 	def save(self, i):
 		assert self.fs_initialized
 		self.saved[int(i)] = copy.deepcopy(Struct(micro_ops = self.micro_ops,
@@ -360,8 +360,7 @@ class Replayer:
 			for j in range(0, till):
 				if not micro_op.hidden_disk_ops[j].hidden_omitted:
 					to_replay.append(micro_op.hidden_disk_ops[j])
-				replay_disk_ops(self.path_inode_map, to_replay, dirname, stdout_file, use_cached = False)
-	
+                replay_disk_ops(self.path_inode_map, to_replay, dirname, stdout_file, use_cached = False)
 	def get_op(self, i):
 		assert i <= len(self.micro_ops)
 		return copy.deepcopy(self.micro_ops[i])

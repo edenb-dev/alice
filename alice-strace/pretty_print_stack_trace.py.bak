@@ -7,7 +7,7 @@
 #
 # by Philip Guo
 
-import os, sys, re, subprocess, pickle
+import os, sys, re, subprocess, cPickle
 from collections import defaultdict, namedtuple
 from optparse import OptionParser
 
@@ -62,7 +62,7 @@ def create_symtab_for_strace_out(fn):
   filenames_to_addrs = defaultdict(list)
 
 
-  for filename, addrs_set in d.items():
+  for filename, addrs_set in d.iteritems():
     # use the following heuristic to determine which address to use:
     #   - if the file is an 'executable', then use original_addr
     #   - otherwise if the file is a 'shared object', then use addr_offset
@@ -78,7 +78,7 @@ def create_symtab_for_strace_out(fn):
       for (_, original_addr) in addrs_set:
         filenames_to_addrs[filename].append(original_addr)
     else:
-      print("Warning:", filename, "doesn't appear to be an executable or shared library", file=sys.stderr)
+      print >> sys.stderr, "Warning:", filename, "doesn't appear to be an executable or shared library"
 
 
   return get_symbol_table_using_gdb(filenames_to_addrs)
@@ -117,14 +117,14 @@ def get_symbol_table_using_gdb(filenames_to_addrs):
   noLineInfoRE = re.compile('No line number information available for address 0x\S+ <(.*?)>')
 
   # for each file, create a gdb script to introspect all elements of addr_list
-  for filename, addrs_lst in filenames_to_addrs.items():
+  for filename, addrs_lst in filenames_to_addrs.iteritems():
     # now create a gdb script with some filler and the critical line that makes
     # the query for debug info: 'info line *<addr>'
     tmp_gdb_script = open('temp.gdb', 'w')
     for addr in sorted(addrs_lst):
-      print('echo ===\\n', file=tmp_gdb_script)
-      print('echo ' + addr + '\\n', file=tmp_gdb_script)
-      print('info line *' + addr, file=tmp_gdb_script)
+      print >> tmp_gdb_script, 'echo ===\\n'
+      print >> tmp_gdb_script, 'echo ' + addr + '\\n'
+      print >> tmp_gdb_script, 'info line *' + addr
     tmp_gdb_script.close() # force write to disk, or else temp.gdb will be empty!
 
     # now run:
@@ -135,7 +135,7 @@ def get_symbol_table_using_gdb(filenames_to_addrs):
     (gdb_stdout, gdb_stderr) = subprocess.Popen(['gdb', filename, '-batch', '-x', 'temp.gdb'],
                                                 stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
     if gdb_stderr:
-      print("GDB warnings while processing %s:" % (filename,), gdb_stderr, end=' ', file=sys.stderr)
+      print >> sys.stderr, "GDB warnings while processing %s:" % (filename,), gdb_stderr,
 
     # parse the output of gdb, where each record is:
     # ===
@@ -247,7 +247,7 @@ class StraceLogEntry:
             syms = SymbolTableEntry(None, None, None, None)
 
           assert len(syms) == 4
-          t = StackEntry(syms.__name__, syms.instr_offset, syms.src_filename, syms.src_line_num,
+          t = StackEntry(syms.func_name, syms.instr_offset, syms.src_filename, syms.src_line_num,
                          binary_filename, addr_offset, raw_addr)
           self.backtrace.append(t)
 
@@ -255,9 +255,9 @@ class StraceLogEntry:
 stack_file = sys.argv[1]
 symtab = create_symtab_for_strace_out(stack_file)
 for line in open(stack_file, 'r'):
-	print('-------------------------------------------------')
-	print(line)
+	print '-------------------------------------------------'
+	print line
 	backtrace = StraceLogEntry(line, symtab).backtrace
 	for x in backtrace:
-		print(x)
+		print x
 

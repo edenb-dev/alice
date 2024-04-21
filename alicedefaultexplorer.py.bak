@@ -23,7 +23,7 @@
 import os
 import subprocess
 import cProfile
-import queue
+import Queue
 import threading
 import time
 import pprint
@@ -42,7 +42,7 @@ __credits__ = ["Thanumalayan Sankaranarayana Pillai", "Vijay Chidambaram",
 __license__ = "MIT"
 
 class MultiThreadedChecker(threading.Thread):
-	queue = queue.Queue()
+	queue = Queue.Queue()
 	outputs = {}
 	
 	def __init__(self, queue, thread_id='0'):
@@ -94,25 +94,25 @@ def stack_repr(op):
 				continue
 			if '/libc' in stack_frame.binary_filename:
 				continue
-			if stack_frame.__name__ != None and 'output_stacktrace' in stack_frame.__name__:
+			if stack_frame.func_name != None and 'output_stacktrace' in stack_frame.func_name:
 				continue
 			found = True
 			break
 		if not found:
 			raise Exception('Standard stack traverse did not work')
 		if stack_frame.src_filename == None:
-			return 'B-' + str(stack_frame.binary_filename) + ':' + str(stack_frame.raw_addr) + '[' + str(stack_frame.__name__).replace('(anonymous namespace)', '()') + ']'
-		return str(stack_frame.src_filename) + ':' + str(stack_frame.src_line_num) + '[' + str(stack_frame.__name__).replace('(anonymous namespace)', '()') + ']'
+			return 'B-' + str(stack_frame.binary_filename) + ':' + str(stack_frame.raw_addr) + '[' + str(stack_frame.func_name).replace('(anonymous namespace)', '()') + ']'
+		return str(stack_frame.src_filename) + ':' + str(stack_frame.src_line_num) + '[' + str(stack_frame.func_name).replace('(anonymous namespace)', '()') + ']'
 	except Exception as e:
 		return 'Unknown (stacktraces not traversable for finding static vulnerabilities):' + op.hidden_id
 
 
 def default_checks(alice_args, threads = 1):
-	print('Parsing traces to determine logical operations ...')
+	print 'Parsing traces to determine logical operations ...'
 	replayer = Replayer(alice_args)
 	replayer.set_fs(defaultfs('count', 1))
 
-	print('Logical operations:')
+	print 'Logical operations:'
 	replayer.print_ops()
 
 	assert threads > 0
@@ -123,7 +123,7 @@ def default_checks(alice_args, threads = 1):
 
 	atomic_patch_middle = set()
 
-	print('Finding vulnerabilities...')
+	print 'Finding vulnerabilities...'
 	# Finding across-syscall atomicity
 	for i in range(0, replayer.mops_len()):
 		dirname = os.path.join(aliceconfig().scratchpad_dir, 'reconstructeddir-' + str(i))
@@ -145,16 +145,16 @@ def default_checks(alice_args, threads = 1):
 			patch_end = i + 1
 			if patch_end >= replayer.mops_len():
 				patch_end = replayer.mops_len() - 1
-				print('WARNING: Application found to be inconsistent after the entire workload completes. Recheck workload and checker. Possible bug in ALICE framework if this is not expected.')
-			print('(Dynamic vulnerability) Across-syscall atomicity, sometimes concerning durability: ' + \
-				'Operations ' + str(patch_start) + ' until ' + str(patch_end) + ' need to be atomically persisted')
+				print 'WARNING: Application found to be inconsistent after the entire workload completes. Recheck workload and checker. Possible bug in ALICE framework if this is not expected.'
+			print '(Dynamic vulnerability) Across-syscall atomicity, sometimes concerning durability: ' + \
+				'Operations ' + str(patch_start) + ' until ' + str(patch_end) + ' need to be atomically persisted'
 			staticvuls.add((stack_repr(replayer.get_op(patch_start)),
 				stack_repr(replayer.get_op(patch_end))))
 		i += 1
 
 	for vul in staticvuls:
-		print('(Static vulnerability) Across-syscall atomicity: ' + \
-			'Operation ' + vul[0] + ' until ' + vul[1])
+		print '(Static vulnerability) Across-syscall atomicity: ' + \
+			'Operation ' + vul[0] + ' until ' + vul[1]
 
 	# Finding ordering vulnerabilities
 	replayer.load(0)
@@ -184,15 +184,15 @@ def default_checks(alice_args, threads = 1):
 	for i in range(0, replayer.mops_len()):
 		for j in range(i + 1, replayer.mops_len()):
 			if (i, j) in checker_outputs and checker_outputs[(i, j)] != 0:
-				print('(Dynamic vulnerability) Ordering: ' + \
-					'Operation ' + str(i) + ' needs to be persisted before ' + str(j))
+				print '(Dynamic vulnerability) Ordering: ' + \
+					'Operation ' + str(i) + ' needs to be persisted before ' + str(j)
 				staticvuls.add((stack_repr(replayer.get_op(i)),
 					stack_repr(replayer.get_op(j))))
 				break
 
 	for vul in staticvuls:
-		print('(Static vulnerability) Ordering: ' + \
-			'Operation ' + vul[0] + ' needed before ' + vul[1])
+		print '(Static vulnerability) Ordering: ' + \
+			'Operation ' + vul[0] + ' needed before ' + vul[1]
 
 	# Finding atomicity vulnerabilities
 	replayer.load(0)
@@ -241,12 +241,12 @@ def default_checks(alice_args, threads = 1):
 					
 
 		if len(dynamicvuls) > 0:
-			print('(Dynamic vulnerability) Atomicity: ' + \
-				'Operation ' + str(i) + '(' + (', '.join(dynamicvuls)) + ')')
+			print '(Dynamic vulnerability) Atomicity: ' + \
+				'Operation ' + str(i) + '(' + (', '.join(dynamicvuls)) + ')'
 			staticvuls[stack_repr(replayer.get_op(i))].update(dynamicvuls)
 
 	for vul in staticvuls:
-		print('(Static vulnerability) Atomicity: ' + \
-			'Operation ' + vul + ' (' + (','.join(staticvuls[vul])) + ')')
+		print '(Static vulnerability) Atomicity: ' + \
+			'Operation ' + vul + ' (' + (','.join(staticvuls[vul])) + ')'
 
-	print('Done finding vulnerabilities.')
+	print 'Done finding vulnerabilities.'

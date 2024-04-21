@@ -29,7 +29,7 @@ from collections import defaultdict
 import itertools
 import pickle
 import pprint
-
+from sets import Set
 
 __author__ = "Vijay Chidambaram"
 __copyright__ = "Copyright 2014, Vijay Chidambaram"
@@ -139,7 +139,7 @@ class Operation:
         op_index = (self.inode, self.syscall)
         self.micro_op_id = micro_op_id
         # The set of ops that this is dependent on.
-        self.deps = {}
+        self.deps = Set()
         # Update dirty write collection if required.
         self.update_dirty_write_collection()
         # Finally, calculate dependencies
@@ -162,9 +162,9 @@ class Operation:
             if self.final_size >= start and self.final_size <= end:
                 return True
 
-        if self.syscall in ["create_dir_entry", "delete_dir_entry"]:
-            return True
-        
+	if self.syscall in ["create_dir_entry", "delete_dir_entry"]:
+		return True
+
         return False 
 
     # This updates the dirty write collection.
@@ -499,12 +499,12 @@ class ALCTestSuite:
     # Pretty print an op list with the representation for each operation.
     def print_op_list(self):
         for op in self.op_list:
-            print((op.get_short_string()))
+            print(op.get_short_string())
 
     # Print deps.
     def print_deps(self):
         for op in self.op_list:
-            print((op.get_short_string() + "depends on:"))
+            print(op.get_short_string() + "depends on:")
             print_op_string(op.deps)
 
     # == External ==
@@ -536,7 +536,7 @@ if __name__ == '__main__':
 
     testSuite = ALCTestSuite(micro_op_list) 
     combos = testSuite.get_combos(5000)
-    print(("Number of combos: " + str(len(combos))))
+    print("Number of combos: " + str(len(combos)))
 
     # Alternatively, you can just get the number of combos directly. 
     # This doesn't generate all the sets, and is much faster.
@@ -548,16 +548,16 @@ if __name__ == '__main__':
 
     # Test case of how to use test_combo_validity
     combo_list = [1, 2, 51]
-    print((testSuite.test_combo_validity(combo_list)))
+    print(testSuite.test_combo_validity(combo_list))
     combo_list = [1, 2, 3]
-    print((testSuite.test_combo_validity(combo_list)))
+    print(testSuite.test_combo_validity(combo_list))
 
     # Testing out the drop list functionality for single item list.
     for i in range(0, len(testSuite.op_list)):
         op_id_list = []
         op_id_list.append(i)
         result_set = testSuite.drop_list_of_ops(op_id_list)
-        print((str(i) + ": " + str(len(result_set))))
+        print(str(i) + ": " + str(len(result_set)))
 
     # Test for random combos. 
     op_id_list = []
@@ -565,14 +565,14 @@ if __name__ == '__main__':
     op_id_list.append(5)
     op_id_list.append(40)
     result_set = testSuite.drop_list_of_ops(op_id_list)
-    print(("Drop list answer: " + str(len(result_set))))
+    print("Drop list answer: " + str(len(result_set)))
 
     # Testing out the keep list functionality for single item list.
     for i in range(0, len(testSuite.op_list)):
         op_id_list = []
         op_id_list.append(i)
         result_set = testSuite.keep_list_of_ops(op_id_list)
-        print((str(i) + ": " + str(len(result_set))))
+        print(str(i) + ": " + str(len(result_set)))
 
     # Testing keep list functionality.
     op_id_list = []
@@ -580,7 +580,7 @@ if __name__ == '__main__':
     op_id_list.append(5)
     op_id_list.append(40)
     result_set = testSuite.keep_list_of_ops(op_id_list)
-    print(("Keep list answer: " + str(len(result_set))))
+    print("Keep list answer: " + str(len(result_set)))
 
     # Testing adding lots of dependencies and seeing if it reduces the number
     # of combos.
@@ -592,7 +592,7 @@ if __name__ == '__main__':
         list_of_deps.append((8, i))
     testSuite2.add_deps_to_ops(list_of_deps)
     after_combo = testSuite2.count_all_combos()
-    print((before_combo, after_combo))
+    print(before_combo, after_combo)
 
     # Print out the list of operations
     if args.very_verbose:

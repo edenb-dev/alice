@@ -41,7 +41,7 @@ class Struct:
 			else:
 				argsbegin = []
 				argsend = []
-				for (k,v) in list(vars(self).items()):
+				for (k,v) in vars(self).items():
 					if k != 'op' and k != 'name' and k[0:7] != 'hidden_':
 						if k == 'source' or k == 'dest':
 							argsbegin.append('%s="%s"' % (k, coded_colorize(short_path(v))))
@@ -56,8 +56,8 @@ class Struct:
 			elif self.op == 'stdout':
 				colored_op = colorize(self.op, 2)
 			return '%s(%s)' % (colored_op, ', '.join(args))
-			args = ['%s=%s' % (k, repr(v)) for (k,v) in list(vars(self).items()) if k[0:7] != 'hidden_']
-			return 'Struct(%s)' % ', '.join(args)
+	        args = ['%s=%s' % (k, repr(v)) for (k,v) in vars(self).items() if k[0:7] != 'hidden_']
+	        return 'Struct(%s)' % ', '.join(args)
 	def superficial_eq(self, other):
 		if type(self) != type(other):
 			return False

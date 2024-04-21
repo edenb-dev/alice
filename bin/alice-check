@@ -45,7 +45,7 @@ args = parser.parse_args()
 args.checker = os.path.abspath(args.checker)
 args.traces_dir = os.path.abspath(args.traces_dir)
 
-f = open(os.path.join(args.traces_dir, "config"), "r")
+f = open(os.path.join(args.traces_dir, "config"), "rb")
 config = pickle.load(f)
 f.close()
 

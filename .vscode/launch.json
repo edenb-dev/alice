@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "/home/lior/final_project/alice/bin/alice-check",
             "console": "integratedTerminal",
-            "args": " --traces_dir=traces_dir --checker=./checker_basicAdd_bad"
+            "args": " --traces_dir=/home/lior/final_project/alice/scenario_builder/compiled/test1/initial/traces_dir --checker=./checker_basicAdd_bad"
         }
     ]
 }

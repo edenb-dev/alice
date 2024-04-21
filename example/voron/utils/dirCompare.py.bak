@@ -26,7 +26,7 @@ def compare_directories_deep(dir_1 = None, dir_2 = None):
 
     files = compare_directories_shallow(dir_1, dir_2)
 
-    for file_path, indicator in list(files.items()):
+    for file_path, indicator in files.items():
 
         # file exists in both directories.
         if indicator == 0:
@@ -129,8 +129,8 @@ def main():
     # Invalid Use Case.
     if len(sys.argv) != 3:
         print("(?) Supply only two directory paths you would like to compare...")
-        dir_1 = eval(input('enter first directory path: '))
-        dir_2 = eval(input('enter second directory path: '))
+        dir_1 = input('enter first directory path: ')
+        dir_2 = input('enter second directory path: ')
     else: # Updating values.
     	dir_1 = sys.argv[1]
     	dir_2 = sys.argv[2]
@@ -141,7 +141,7 @@ def main():
     deleted_files = []
     added_files = []
 
-    for file_path, indicator in list(shallow_compare.items()):
+    for file_path, indicator in shallow_compare.items():
 
         # file exists in the first dir. (sys.argv[1])
         if indicator == 1:
@@ -159,7 +159,7 @@ def main():
 
 	# --------------- ALICE --------------- #
 	
-    print((len(deleted_files) == 0 and len(added_files) == 0 and len(updated_files) == 0))
+    print(len(deleted_files) == 0 and len(added_files) == 0 and len(updated_files) == 0)
     return
 	# ------------------------------------- #
 
@@ -170,19 +170,19 @@ def main():
     if len(deleted_files) == 0:
         print('- No files were deleted from the second directory.')
     else:
-        print(('(-) ' + '\n(-) '.join(deleted_files)))
+        print('(-) ' + '\n(-) '.join(deleted_files))
 
     print('\n------ Added Files ------\n')
     if len(added_files) == 0:
         print('- No files were added from the second directory.')
     else:
-        print(('(+) ' + '\n(+) '.join(added_files)))
+        print('(+) ' + '\n(+) '.join(added_files))
 
     print('\n------ Updated Files ------\n')
     if len(updated_files) == 0:
         print('- No changes or updates made to any files.')
     else:
-        print(('(?) ' + '\n(?) '.join(updated_files)))
+        print('(?) ' + '\n(?) '.join(updated_files))
 
     # Debug
     # print(deleted_files,'\n',added_files,'\n',shallow_compare,'\n',updated_files,'\n',deep_compare)

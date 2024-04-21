@@ -21,7 +21,7 @@
 import pickle
 import csv
 import sys
-import subprocess
+import commands
 import uuid
 import copy
 import os
@@ -118,7 +118,7 @@ def parse_line(line):
 			toret.return_explanation = return_explanation
 
 		# The arguments part looks something like '(20, "hello", "world", 3)'
-		args = next(csv.reader([line[m.start(3):m.end(3)]], delimiter=',', quotechar='"'))
+		args = csv.reader([line[m.start(3):m.end(3)]], delimiter=',', quotechar='"').next()
 		# Now args is ['(20', ' "hello"', ' "world"', ' 3)']
 		args = [x[1:] for x in args]
 		args[len(args) - 1] = args[len(args) - 1][:-1]
@@ -129,7 +129,7 @@ def parse_line(line):
 		for innocent_line in ['+++ exited with', ' --- SIG', '<unfinished ...>', ' = ? <unavailable>', 'ptrace(SYSCALL):No such process']:
 			if line.find(innocent_line) != -1:
 				return False
-		print(line)
+		print line
 		raise err
 
 class MemregionTracker:
@@ -139,7 +139,7 @@ class MemregionTracker:
 
 	def __find_overlap(self, addr_start, addr_end, return_immediately = True):
 		toret = []
-		for cur_start in list(self.memregion_map.keys()):
+		for cur_start in self.memregion_map.keys():
 			memregion = self.memregion_map[cur_start]
 			cur_end = memregion.addr_end
 			if (addr_start >= cur_start and addr_start <= cur_end) or \
@@ -180,7 +180,7 @@ class MemregionTracker:
 					self.memregion_map[new_region.addr_start] = new_region
 
 	def file_mapped(self, inode):
-		for region in list(self.memregion_map.values()):
+		for region in self.memregion_map.values():
 			if region.inode == inode:
 				return True
 		return False
@@ -208,7 +208,7 @@ class FileDescriptorTracker:
 
 	def new_fd_mapping(self, fd, name, pos, attribs, inode):
 		if fd in self.fd_details:
-			print(self.fd_details[fd])
+			print self.fd_details[fd]
 		assert fd not in self.fd_details
 		attribs = set(attribs)
 		self.fd_details[fd] = Struct(name = name, pos = pos, attribs = attribs, inode = inode)
@@ -283,7 +283,6 @@ def __get_files_from_inode(inode, all_files = False):
 		assert inode == 0
 		results = subprocess.check_output(['find', aliceconfig().scratchpad_dir])
 	toret = []
-	results = str(results, "utf8")
 	for path in results.split('\n'):
 		if path != '':
 			# Converting the (replayed) path into original path
@@ -308,11 +307,6 @@ class ProcessTracker:
 		self.pid = pid
 		self.memtracker = MemregionTracker()
 		self.fdtracker = FileDescriptorTracker()
-		self.stdtracker = FileDescriptorTracker()
-		self.stdtracker.new_fd_mapping(0, "stdin", 0, [],None)
-		self.stdtracker.new_fd_mapping(1, "stdout", 0, [],None)
-		self.stdtracker.new_fd_mapping(2, "stderr", 0, [],None)
-
 		self.fdtracker_unwatched = FileDescriptorTracker()
 		self.cwd = aliceconfig().starting_cwd 
 		self.child_tids = []
@@ -407,7 +401,7 @@ def __get_backtrace(stackinfo):
 			syms = SymbolTableEntry(None, None, None, None)
 
 		assert len(syms) == 4
-		t = StackEntry(syms.__name__, syms.instr_offset, syms.src_filename, syms.src_line_num, binary_filename, addr_offset, raw_addr)
+		t = StackEntry(syms.func_name, syms.instr_offset, syms.src_filename, syms.src_line_num, binary_filename, addr_offset, raw_addr)
 		backtrace.append(t)
 
 	return backtrace
@@ -420,7 +414,6 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 	proctracker = ProcessTracker.get_proctracker(syscall_tid)
 	memtracker = proctracker.memtracker
 	fdtracker = proctracker.fdtracker
-	stdtracker = proctracker.stdtracker
 	fdtracker_unwatched = proctracker.fdtracker_unwatched
 
 	global __directory_symlinks
@@ -454,7 +447,7 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 					assert 'O_WRONLY' in flags or 'O_RDWR' in flags
 					assert len(fdtracker.get_fds_fname(name)) == 0
 					assert mode
-					tmp_fd = os.open(replayed_path(name), os.O_CREAT | os.O_WRONLY, int(mode, base=8))
+					tmp_fd = os.open(replayed_path(name), os.O_CREAT | os.O_WRONLY, eval(mode))
 					assert tmp_fd > 0
 					os.close(tmp_fd)
 					inode = __replayed_stat(name).st_ino
@@ -513,7 +506,8 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 		# print fdtracker.fd_details
 
 	
-		is_stdout_fd = False	
+		is_stdout_fd = ("Step " in buf[:5])
+	
 
 
 		if fdtracker_unwatched.is_watched(fd):
@@ -602,7 +596,7 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 	elif parsed_line.syscall == 'close':
 		if int(parsed_line.ret) == -1:
 			if aliceconfig().debug_level >= 2:
-				print('WARNING: close() returned -1. ' + line)
+				print 'WARNING: close() returned -1. ' + line
 		else:
 			fd = safe_string_to_int(parsed_line.args[0])
 			if fdtracker.is_watched(fd):
@@ -664,9 +658,9 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 					if hardlinks > 1:
 						os.unlink(replayed_path(name))
 						if len(fdtracker.get_fds(inode)) > 1:
-							print("Warning: File unlinked while being open: " + name)
+							print "Warning: File unlinked while being open: " + name
 						if memtracker.file_mapped(inode):
-							print("Warning: File unlinked while being mapped: " + name)
+							print "Warning: File unlinked while being mapped: " + name
 					else:
 						os.rename(replayed_path(name), replayed_path(name) + '.deleted_' + str(uuid.uuid1()))
 	elif parsed_line.syscall == 'lseek':
@@ -790,8 +784,6 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 			tracker = fdtracker
 		elif fdtracker_unwatched.is_watched(fd):
 			tracker = fdtracker_unwatched
-		elif stdtracker.is_watched(fd):
-			tracker = stdtracker
 
 		if tracker:
 
@@ -806,7 +798,7 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 				new_fd = eval(parsed_line.ret)
 				old_fd = eval(parsed_line.args[0])
 				tracker.set_equivalent(old_fd, new_fd)
-				print(str(old_fd) + " -> " + str(new_fd))
+				print str(old_fd) + " -> " + str(new_fd)
 			elif cmd == 'F_SETFL':
 				assert tracker == fdtracker_unwatched
 	elif parsed_line.syscall in ['mmap', 'mmap2']:
@@ -893,15 +885,15 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 		if parsed_line.syscall.startswith('f'):
 			fd = eval(parsed_line.args[0])
 			if fdtracker.is_watched(fd):
-				print('WARNING: ' + line + ' :: file = ' + fdtracker.get_name(fd))
+				print 'WARNING: ' + line + ' :: file = ' + fdtracker.get_name(fd)
 		elif parsed_line.syscall == 'umask':
 			if not 'umask_warned' in globals():
 				globals()['umask_warned'] = True
-				print('WARNING: UMASK')
+				print 'WARNING: UMASK'
 		else:
 			name = proctracker.original_path(eval(parsed_line.args[0]))
 			if is_interesting(name):
-				print('WARNING: ' + line)
+				print 'WARNING: ' + line
 	elif parsed_line.syscall == 'ioctl':
 		fd = int(parsed_line.args[0])
 		assert not fdtracker.is_watched(fd)
@@ -916,7 +908,7 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 			if name == None:
 				debug_level = 2
 			if aliceconfig().debug_level >= debug_level:
-				print('WARNING: ' + line + ' name = ' + str(name))
+				print 'WARNING: ' + line + ' name = ' + str(name)
 	elif parsed_line.syscall in ['shmget', 'shmat', 'shmdt', 'shmctl']:
 		if parsed_line.syscall == 'shmget':
 			assert parsed_line.args[0] == 'IPC_PRIVATE'
@@ -924,31 +916,31 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 		proctracker.record_execve()
 	elif parsed_line.syscall in ['io_setup', 'aio_read', 'io_getevents', 'io_destroy']:
 		if aliceconfig().debug_level >= 2:
-			print('Warning: AIO ' + line)
+			print 'Warning: AIO ' + line
 	elif parsed_line.syscall == 'symlink':
 		if eval(parsed_line.ret) != -1:
 			source = proctracker.original_path(eval(parsed_line.args[0]))
 			dest = proctracker.original_path(eval(parsed_line.args[1]))
 			if is_interesting(dest) or is_interesting(source):
-				print('WARNING: ' + line)
+				print 'WARNING: ' + line
 			if is_interesting(dest):
 				source_is_dir = False
 				if source.startswith(aliceconfig().base_path):
 					if os.path.isdir(replayed_path(source)):
 						source_is_dir = True
 				else:
-					print('WARNING: symlink source outside base path. Assuming file link.')
+					print 'WARNING: symlink source outside base path. Assuming file link.'
 				if source_is_dir == True:
-					os.mkdir(replayed_path(dest), 0o777)
+					os.mkdir(replayed_path(dest), 0777)
 					inode = __replayed_stat(dest).st_ino
 					__directory_symlinks.append(inode)
 					micro_operations.append(Struct(op = 'mkdir', name = dest, mode = '0777', inode = inode, parent = __parent_inode(dest)))
 				else:
-					tmp_fd = os.open(replayed_path(dest), os.O_CREAT | os.O_WRONLY, 0o666)
+					tmp_fd = os.open(replayed_path(dest), os.O_CREAT | os.O_WRONLY, 0666)
 					assert tmp_fd > 0
 					os.close(tmp_fd)
 					inode = __replayed_stat(dest).st_ino
-					new_op = Struct(op = 'creat', name = dest, mode = 0o666, inode = inode, parent = __parent_inode(dest))
+					new_op = Struct(op = 'creat', name = dest, mode = 0666, inode = inode, parent = __parent_inode(dest))
 					micro_operations.append(new_op)
 	elif parsed_line.syscall == 'mremap':
 		ret_address = safe_string_to_int(parsed_line.ret)
@@ -973,7 +965,7 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 def get_micro_ops():
 	global innocent_syscalls, symtab, SymbolTableEntry
 
-	files = subprocess.getoutput("ls " + aliceconfig().strace_file_prefix + ".* | grep -v byte_dump | grep -v stackinfo | grep -v symtab").split()
+	files = commands.getoutput("ls " + aliceconfig().strace_file_prefix + ".* | grep -v byte_dump | grep -v stackinfo | grep -v symtab").split()
 	rows = []
 	mtrace_recorded = []
 	assert len(files) > 0
@@ -990,7 +982,6 @@ def get_micro_ops():
 			stackinfo_file = open(trace_file[0 : m.start(0)] + '.stackinfo' + trace_file[m.start(0) : ], 'r')
 		for line in f:
 			parsed_line = parse_line(line)
-
 			if parsed_line:
 				# Replace any system calls that have a 32-bit
 				# equivalent with the equivalent
@@ -1038,13 +1029,13 @@ def get_micro_ops():
 			micro_operations += __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded)
 		except:
 			traceback.print_exc()
-			print(row)
-			print('----------------------------------------------------')
+			print row
+			print '----------------------------------------------------'
 			for op in micro_operations:
-				print(op)
-			print('----------------------------------------------------')
-			print(aliceconfig())
-			print('----------------------------------------------------')
+				print op
+			print '----------------------------------------------------'
+			print aliceconfig()
+			print '----------------------------------------------------'
 			os.system("ls -lR " + aliceconfig().scratchpad_dir)
 			exit()
 

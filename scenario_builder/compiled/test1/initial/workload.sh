@@ -37,4 +37,4 @@ cd workload_dir
 # argument specifies where all the traces recorded will be stored.
 alice-record --workload_dir . \
 	--traces_dir ../traces_dir \
-	../app
+	../test_complexCharAdd

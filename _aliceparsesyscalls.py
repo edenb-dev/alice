@@ -96,6 +96,8 @@ expansive_ops = set(['append', 'trunc', 'write', 'unlink', 'rename'])
 pseudo_ops = sync_ops | set(['stdout'])
 real_ops = expansive_ops | set(['creat', 'link', 'mkdir', 'rmdir'])
 
+
+
 def parse_line(line):
 	try:
 		toret = Struct()
@@ -413,8 +415,13 @@ def __get_backtrace(stackinfo):
 	return backtrace
 
 __directory_symlinks = []
+
+my_tracker = {}
+
 def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 	micro_operations = []
+
+	global my_tracker
 
 	assert type(syscall_tid) == int
 	proctracker = ProcessTracker.get_proctracker(syscall_tid)
@@ -500,7 +507,7 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 		os.lseek(fd_data, dump_offset, os.SEEK_SET)
 		buf = os.read(fd_data, count)
 		os.close(fd_data)
-
+		# ------------------------------------------------
 		# print "==== New Write ===="
 		# print "Path: " + dump_file
 		# print "Data: " + buf
@@ -511,9 +518,10 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 		# global details
 		# print details.fd_details
 		# print fdtracker.fd_details
+		print("FD:   " + str(fd) + "\t" + "Data: " + str(buf))
 
-	
-		is_stdout_fd = False	
+		is_stdout_fd = False
+		print(my_tracker)
 
 
 		if fdtracker_unwatched.is_watched(fd):
@@ -522,7 +530,16 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 			name = fdtracker.get_name(fd)
 
 
-		if fdtracker.is_watched(fd) or is_stdout_fd:#fd == 1:
+
+
+		is_equivalent_to_stdout_file = False
+
+		if fd in my_tracker and 1 in my_tracker[fd]:
+			is_equivalent_to_stdout_file = True
+
+
+		########## -------------------- FIX to old version and undertand what is in the if.
+		if fdtracker.is_watched(fd) or is_stdout_fd or is_equivalent_to_stdout_file:#fd == 1:
 
 			dump_file = eval(parsed_line.args[-2])
 			dump_offset = safe_string_to_int(parsed_line.args[-1])
@@ -542,7 +559,7 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 
 
 
-			if is_stdout_fd:#fd == 1:
+			if is_equivalent_to_stdout_file:#fd == 1:
 				count = safe_string_to_int(parsed_line.args[2])
 				fd_data = os.open(dump_file, os.O_RDONLY)
 				os.lseek(fd_data, dump_offset, os.SEEK_SET)
@@ -806,6 +823,12 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 				new_fd = eval(parsed_line.ret)
 				old_fd = eval(parsed_line.args[0])
 				tracker.set_equivalent(old_fd, new_fd)
+
+				if new_fd not in my_tracker:
+					my_tracker[new_fd] = []
+
+				my_tracker[new_fd].append(old_fd)
+				
 				print(str(old_fd) + " -> " + str(new_fd))
 			elif cmd == 'F_SETFL':
 				assert tracker == fdtracker_unwatched

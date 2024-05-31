@@ -8,9 +8,9 @@
             "name": "alice-check",
             "type": "debugpy",
             "request": "launch",
-            "program": "/home/lior/final_project/alice/bin/alice-check",
+            "program": "/home/eden/Projects/Final_Project_RavenDB/alice/bin/alice-check",
             "console": "integratedTerminal",
-            "args": " --traces_dir=/home/lior/final_project/alice/scenario_builder/compiled/test1/initial/traces_dir --checker=./checker_basicAdd_bad"
+            "args": " --traces_dir=/home/eden/Projects/Final_Project_RavenDB/alice/scenario_builder/compiled/test1/initial/traces_dir --checker=/home/eden/Projects/Final_Project_RavenDB/alice/scenario_builder/compiled/test1/initial/checker.py"
         }
     ]
 }

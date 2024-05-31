@@ -41,4 +41,4 @@ cd workload_dir
 # argument specifies where all the traces recorded will be stored.
 alice-record --workload_dir . \
 	--traces_dir ../traces_dir \
-	/home/lior/final_project/alice/scenario_builder/bin/Debug/net7.0/app
+	/home/eden/Projects/Final_Project_RavenDB/alice/scenario_builder/bin/Debug/net7.0/app

@@ -15,16 +15,19 @@ public class Program
 
         // check_basicAdd(args);
         //check_complexCharAdd(args);
-        {
-            using var f = File.Create("yellow");
-            f.Write("world"u8);
-        }
-        File.Move("yellow", "file1");
-        Console.WriteLine("DoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDoneDone");
+        // {
+        //     using var f = File.Create("yellow");
+        //     f.Write("world"u8);
+        // }
+        // File.Move("yellow", "file1");
 
 
+        Console.WriteLine("test1");
+        Console.WriteLine("test2");
+        Console.WriteLine("test3");
 
-
+        string message = "Hello, world!";
+        Console.Write(message);
     }
 
     public static void test_basicAdd()

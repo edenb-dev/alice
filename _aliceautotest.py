@@ -258,14 +258,16 @@ class Operation:
     # Add a dependecy to the operation.
     def add_dep(self, op):
         self.deps = self.deps | op.deps
-        self.deps.add(op)
+        
+        self.deps[op] = None
+        # self.deps.add(op)
 
 def test_validity(op_list):
     valid = True
     # Dependence check
-    op_set = Set(op_list)
+    op_set = set(op_list)
     for op in op_list:
-        if not op.deps <= op_set:
+        if not set(op.deps) <= op_set:
             return False
     return True
 

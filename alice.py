@@ -236,7 +236,7 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 					os.lseek(fd, line.offset, os.SEEK_SET)
 
 					
-					os.write(fd, buf)
+					os.write(fd, buf) # bytes(buf, "utf8")
 					os.close(fd)
 					buf = ""
 				else:
@@ -272,8 +272,8 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 			# 	print ord(char)
 
 			# print line.data.decode('string-escape')
-
-			output_stdout.write(line.data)
+			# print(line.data)
+			output_stdout.write(line.data.decode("utf-8")) # output_stdout.write(line.data)
 		else:
 			assert line.op == 'sync'
 

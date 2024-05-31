@@ -1,10 +1,10 @@
 (dp0
 S'starting_wd'
 p1
-S'/home/lior/final_project/alice/scenario_builder/compiled/test1/initial/workload_dir'
+S'/home/eden/Projects/Final_Project_RavenDB/alice/scenario_builder/compiled/test1/initial/workload_dir'
 p2
 sS'workload_dir'
 p3
-S'/home/lior/final_project/alice/scenario_builder/compiled/test1/initial/workload_dir'
+S'/home/eden/Projects/Final_Project_RavenDB/alice/scenario_builder/compiled/test1/initial/workload_dir'
 p4
 s.

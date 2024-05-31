@@ -260,7 +260,6 @@ class Operation:
         self.deps = self.deps | op.deps
         
         self.deps[op] = None
-        # self.deps.add(op)
 
 def test_validity(op_list):
     valid = True

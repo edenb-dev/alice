@@ -302,8 +302,6 @@ def __get_files_from_inode(inode, all_files = False):
 
 
 
-details = ""
-
 
 class ProcessTracker:
 	def __init__(self, pid):
@@ -319,8 +317,6 @@ class ProcessTracker:
 		self.cwd = aliceconfig().starting_cwd 
 		self.child_tids = []
 
-		global details
-		details = self.fdtracker
 
 	def record_fork(self, forked_tid):
 		assert forked_tid not in ProcessTracker.trackers_map
@@ -498,32 +494,6 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 		name = None
 
 
-		# PRINT
-		dump_file = eval(parsed_line.args[-2])
-		dump_offset = safe_string_to_int(parsed_line.args[-1])
-
-		count = safe_string_to_int(parsed_line.args[2])
-		fd_data = os.open(dump_file, os.O_RDONLY)
-		os.lseek(fd_data, dump_offset, os.SEEK_SET)
-		buf = os.read(fd_data, count)
-		os.close(fd_data)
-		# ------------------------------------------------
-		# print "==== New Write ===="
-		# print "Path: " + dump_file
-		# print "Data: " + buf
-		# print "FD:   " + str(fd)
-		# print "==== END ====\n\n"
-		# PRINT 
-		# print self.fdtracker
-		# global details
-		# print details.fd_details
-		# print fdtracker.fd_details
-		print("FD:   " + str(fd) + "\t" + "Data: " + str(buf))
-
-		is_stdout_fd = False
-		print(my_tracker)
-
-
 		if fdtracker_unwatched.is_watched(fd):
 			name = fdtracker_unwatched.get_name(fd)
 		elif fdtracker.is_watched(fd):
@@ -532,34 +502,23 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 
 
 
+		# ---- Global FD Tracker ----
 		is_equivalent_to_stdout_file = False
+		is_fd_1_allowed = True # False
 
-		if fd in my_tracker and 1 in my_tracker[fd]:
+		if ( fd in my_tracker and 1 in my_tracker[fd] ) or ( is_fd_1_allowed and fd == 1 ):
 			is_equivalent_to_stdout_file = True
+		# ---------------------------
 
 
-		########## -------------------- FIX to old version and undertand what is in the if.
-		if fdtracker.is_watched(fd) or is_stdout_fd or is_equivalent_to_stdout_file:#fd == 1:
+
+		if fdtracker.is_watched(fd) or is_equivalent_to_stdout_file:
 
 			dump_file = eval(parsed_line.args[-2])
 			dump_offset = safe_string_to_int(parsed_line.args[-1])
-		
-			
-			# PRINT
-
-			# count = safe_string_to_int(parsed_line.args[2])
-			# fd_data = os.open(dump_file, os.O_RDONLY)
-			# os.lseek(fd_data, dump_offset, os.SEEK_SET)
-			# buf = os.read(fd_data, count)
-			# os.close(fd_data)
-
-			# print "==== is_watched or fd == 1 ====   stdout => " + buf + "\n\n"
-			
-			# PRINT
 
 
-
-			if is_equivalent_to_stdout_file:#fd == 1:
+			if is_equivalent_to_stdout_file:
 				count = safe_string_to_int(parsed_line.args[2])
 				fd_data = os.open(dump_file, os.O_RDONLY)
 				os.lseek(fd_data, dump_offset, os.SEEK_SET)
@@ -819,7 +778,7 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 				else:
 					tracker.get_attribs(fd).discard('O_CLOEXEC')
 
-			elif (cmd == 'F_DUPFD' or  cmd == 'F_DUPFD_CLOEXEC') and eval(parsed_line.ret) != -1: # ----------------------------------------- ???????
+			elif (cmd == 'F_DUPFD' or  cmd == 'F_DUPFD_CLOEXEC') and eval(parsed_line.ret) != -1:
 				new_fd = eval(parsed_line.ret)
 				old_fd = eval(parsed_line.args[0])
 				tracker.set_equivalent(old_fd, new_fd)
@@ -829,7 +788,10 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 
 				my_tracker[new_fd].append(old_fd)
 				
-				print(str(old_fd) + " -> " + str(new_fd))
+				# ------------ DEBUG ------------
+				# print(str(old_fd) + " -> " + str(new_fd)) # Show equivalent FDs.
+				# -------------------------------
+
 			elif cmd == 'F_SETFL':
 				assert tracker == fdtracker_unwatched
 	elif parsed_line.syscall in ['mmap', 'mmap2']:

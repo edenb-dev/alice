@@ -148,7 +148,7 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 
 	output_stdout = open(stdout_file, 'w')
 	for line in rows:
-	#	print line
+	
 		if line.op == 'create_dir_entry':
 			new_path = get_inode_directory(line.parent) + '/' + os.path.basename(line.entry)
 			if line.entry_type == Struct.TYPE_FILE:
@@ -236,7 +236,7 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 					os.lseek(fd, line.offset, os.SEEK_SET)
 
 					
-					os.write(fd, buf) # bytes(buf, "utf8")
+					os.write(fd, buf)
 					os.close(fd)
 					buf = ""
 				else:
@@ -259,21 +259,7 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 			writeable_toggle(get_inode_file(line.inode), old_mode)
 		elif line.op == 'stdout':
 
-
-			# /////// EDIT HERE ??????????
-
-			# print len(line.data)
-			# nums = []
-			# for c in line.data:
-			# 	nums.append(ord(c))
-			# print nums
-
-			# for char in line.data.decode('string-escape'):
-			# 	print ord(char)
-
-			# print line.data.decode('string-escape')
-			# print(line.data)
-			output_stdout.write(line.data.decode("utf-8")) # output_stdout.write(line.data)
+			output_stdout.write(line.data.decode("utf-8"))
 		else:
 			assert line.op == 'sync'
 

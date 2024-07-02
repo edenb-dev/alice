@@ -8,9 +8,10 @@
             "name": "alice-check",
             "type": "debugpy",
             "request": "launch",
-            "program": "/home/eden/Projects/Final_Project_RavenDB/alice/bin/alice-check",
+            "program": "./bin/alice-check",
             "console": "integratedTerminal",
-            "args": " --traces_dir=/home/eden/Projects/Final_Project_RavenDB/alice/scenario_builder/compiled/test1/initial/traces_dir --checker=/home/eden/Projects/Final_Project_RavenDB/alice/scenario_builder/compiled/test1/initial/checker.py"
+            // "args": " --traces_dir=./scenario_builder/compiled/test1/initial/traces_dir --checker=./scenario_builder/compiled/test1/initial/checker_complexCharAdd"
+            "args": " --traces_dir=./example/toy/traces_dir --checker=./example/toy/toy_checker.py"
         }
     ]
 }

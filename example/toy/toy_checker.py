@@ -16,3 +16,7 @@ if 'Updated' in stdout:
 else:
 	# Check atomicity
 	assert open('file1').read() in ['hello', 'world']
+
+# Check whether link1 and link2 were created together as a single atomic unit
+"""dirlist = os.listdir('.')
+assert ('link1' in dirlist) == ('link2' in dirlist)"""

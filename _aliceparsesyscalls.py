@@ -504,7 +504,7 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 
 		# ---- Global FD Tracker ----
 		is_equivalent_to_stdout_file = False
-		is_fd_1_allowed = True # False
+		is_fd_1_allowed = False # True / False
 
 		if ( fd in my_tracker and 1 in my_tracker[fd] ) or ( is_fd_1_allowed and fd == 1 ):
 			is_equivalent_to_stdout_file = True
@@ -674,6 +674,13 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 			micro_operations.append(new_op)
 			__replayed_truncate(name, size)
 	elif parsed_line.syscall == 'fallocate':
+
+		# if 'name' not in locals():
+		# 	name = ""
+
+		# if 'size' not in locals():
+		# 	size = 0
+
 		if int(parsed_line.ret) != -1:
 			fd = safe_string_to_int(parsed_line.args[0])
 			if fdtracker.is_watched(fd):
@@ -713,6 +720,13 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 			name = proctracker.original_path(eval(parsed_line.args[0]))
 			mode = parsed_line.args[1]
 			if is_interesting(name):
+
+				if(mode == "0777"):
+					mode = "0o777"
+
+				# DEBUG
+				# print(mode)
+				
 				os.mkdir(replayed_path(name), eval(mode))
 				inode = __replayed_stat(name).st_ino
 				micro_operations.append(Struct(op = 'mkdir', name = name, mode = mode, inode = inode, parent = __parent_inode(name)))
@@ -821,7 +835,8 @@ def __get_micro_op(syscall_tid, line, stackinfo, mtrace_recorded):
 			name = fdtracker.get_name(fd)
 			file_size = __replayed_stat(name).st_size
 			assert file_size <= offset + length
-			if not aliceconfig().ignore_mmap: assert syscall_tid in mtrace_recorded
+			if not aliceconfig().ignore_mmap:
+				assert syscall_tid in mtrace_recorded
 			assert 'MAP_GROWSDOWN' not in flags
 			memtracker.insert(addr_start, addr_end, fdtracker.get_name(fd), fdtracker.get_inode(fd), offset)
 	elif parsed_line.syscall == 'munmap':

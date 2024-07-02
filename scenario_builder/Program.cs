@@ -7,33 +7,109 @@ using System.Threading.Tasks;
 using Voron;
 
 
+using System.Runtime.InteropServices;
+
+
 public class Program
 {
 
     private static void Main(string[] args)
     {
 
+        // test_basicAdd();
         // check_basicAdd(args);
-        //check_complexCharAdd(args);
+
+        // test_complexCharAdd();
+        // check_complexCharAdd(args);
+
+        // using var env = new StorageEnvironment(StorageEnvironmentOptions.ForPath("Data"));
+        // Console.WriteLine("Hello World!");
+
+        // example_toy();
+        Console.WriteLine("Hello World!");
+    }
+
+
+
+    [DllImport("libc", EntryPoint = "sync", SetLastError = false)]
+    public static extern void sync();
+
+    public static void example_toy()
+    {
+
+        // using var env = new StorageEnvironment(StorageEnvironmentOptions.ForPath("Data"));
+
+        // if (!Directory.Exists("test"))
         // {
-        //     using var f = File.Create("yellow");
-        //     f.Write("world"u8);
+
+        //     DirectoryInfo di = Directory.CreateDirectory("test");
+        //     // return;
         // }
-        // File.Move("yellow", "file1");
+
+        // Try to create the directory.
 
 
-        Console.WriteLine("test1");
-        Console.WriteLine("test2");
-        Console.WriteLine("test3");
+        // if (!File.Exists("tmp")) {
+        // using (var file = File.Create("tmp"))
+        //     file.Write("world"u8);
 
-        string message = "Hello, world!";
-        Console.Write(message);
+        // using (var file = File.Create("tmp"))
+        //     file.Write("world"u8);
+        // }
+
+        // using (var fs = new FileStream("tmp", FileMode.Create, FileAccess.Write))
+        //     using (var sw = new StreamWriter(fs))
+        //     {
+        //         sw.Write("world");
+        //     }
+
+        // FileStream("tmp", FileMode.OpenOrCreate, FileAccess.Write)
+        // using (FileStream fs = new FileStream("tmp", FileMode.CreateNew, FileAccess.Write))
+        // {
+        //     byte[] info = new System.Text.UTF8Encoding(true).GetBytes("world");
+        //     fs.Write(info, 0, info.Length);
+        // }
+
+        // File.Delete("tmp");
+
+        // sync();
+
+
+        // File.Move("tmp", "file1", true);
+        // sync();
+
+        using (var fs = new FileStream("tmp", FileMode.CreateNew, FileAccess.Write))
+            File.Delete("tmp");
+
+        Console.WriteLine("Updated");
+    }
+
+
+    public static void toy_cs()
+    {
+
+
+        using (var file = File.Create("tmp"))
+            file.Write("world"u8);
+
+        sync();
+
+
+        File.Move("tmp", "file1", true);
+        sync();
+
+        Console.WriteLine("Updated");
     }
 
     public static void test_basicAdd()
     {
 
-        using var env = new StorageEnvironment(StorageEnvironmentOptions.ForPath("Data"));
+        var options = StorageEnvironmentOptions.ForPath(Directory.GetCurrentDirectory() + "/Data");
+        options.ManualFlushing = true;
+        options.ManualSyncing = true;
+
+        using var env = new StorageEnvironment(options);
+
         using (var wtx = env.WriteTransaction())
         {
             var tree = wtx.CreateTree("Items");
@@ -46,7 +122,15 @@ public class Program
             wtx.Commit();
         }
 
-        Console.WriteLine("Step 1");
+        Console.WriteLine("Commit Finished.");
+
+        env.FlushLogToDataFile();
+
+        Console.WriteLine("FlushLogToDataFile Finished.");
+
+        env.ForceSyncDataFile();
+
+        Console.WriteLine("ForceSyncDataFile Finished.");
     }
 
     public static void check_basicAdd(string[] args)
@@ -63,7 +147,7 @@ public class Program
 
         for (int i = 0; i < 100; i++)
         {
-            synthesizedDB.Add(i.ToString(), (i * 1001).ToString());
+            synthesizedDB.Add(i.ToString(), (i * 100).ToString());
         }
 
         // Checking.

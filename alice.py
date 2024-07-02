@@ -236,7 +236,7 @@ def replay_disk_ops(initial_paths_inode_map, rows, replay_dir, stdout_file, use_
 					os.lseek(fd, line.offset, os.SEEK_SET)
 
 					
-					os.write(fd, buf)
+					os.write(fd, bytes(buf,"utf8"))
 					os.close(fd)
 					buf = ""
 				else:

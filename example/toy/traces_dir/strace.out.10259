@@ -1,0 +1,18 @@
+10:56:12.840512 syscall_334(0x7fd252f4ffe0, 0x20, 0, 0x53053053, 0x80, 0x7fff234f80ef) = 0
+10:56:12.840644 set_robust_list(0x7fd252f4f920, 24) = 0
+10:56:12.842505 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+10:56:12.842737 sched_getaffinity(10256, 128, 0x7fd252f4ec70) = 32
+10:56:12.843471 sched_setaffinity(0, 128, 0x7fd252f4ec70) = 0
+10:56:12.844043 sigaltstack(NULL, {ss_sp=0, ss_flags=SS_DISABLE, ss_size=0}) = 0
+10:56:12.844558 mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fd25274b000
+10:56:12.844737 mprotect(0x7fd25274b000, 4096, PROT_NONE) = 0
+10:56:12.844906 sigaltstack({ss_sp=0x7fd25274b000, ss_flags=0, ss_size=16384}, NULL) = 0
+10:56:12.845567 gettid()                = 10259
+10:56:12.845741 futex(0x55dfa922c810, FUTEX_WAKE_PRIVATE, 1) = 1
+10:56:12.847751 futex(0x55dfa922c7c0, FUTEX_WAKE_PRIVATE, 1) = 0
+10:56:12.849660 getpid()                = 10256
+10:56:12.850298 mmap(0x7fd248000000, 67108864, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7fd248000000
+10:56:12.850449 mprotect(0x7fd248000000, 135168, PROT_READ|PROT_WRITE) = 0
+10:56:12.850599 prctl(PR_SET_NAME, 0x7fd248000b70, 0x7fd248000b70, 0xf, 0xffffffffffffffff) = 0
+10:56:12.851658 openat(AT_FDCWD, "/tmp/clr-debug-pipe-10256-1520370-in", O_RDONLY <unfinished ...>
+10:56:19.752074 +++ exited with 0 +++

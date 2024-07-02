@@ -235,7 +235,7 @@ class Operation:
             for wop in dirty_write_ops_inode[self.inode]:
                 if wop.is_included_in_sync_range(self.offset, self.count):
                     self.deps = self.deps | wop.deps
-                    self.deps.add(wop)
+                    self.deps[wop] = None
 
         # The fsync dependency.
         # Each operation on a file depends on the last fsync to the file. The
@@ -246,7 +246,7 @@ class Operation:
        # fsync: offset = 0, count = full size of file.
         if latest_fsync_on_any_file:
             self.deps = self.deps | latest_fsync_on_any_file.deps
-            self.deps.add(latest_fsync_on_any_file)
+            self.deps[latest_fsync_on_any_file] = None
 
     # Store the notation of dependencies as a bit vector.
     def store_deps_as_bit_vector(self, total_len):            

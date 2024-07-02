@@ -1,8 +1,0 @@
-11:00:23.532004 syscall_334(0x7f34f3ffffe0, 0x20, 0, 0x53053053, 0x80, 0x7ffca227fbff) = 0
-11:00:23.543423 set_robust_list(0x7f34f3fff920, 24) = 0
-11:00:23.555378 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
-11:00:23.564715 sched_getaffinity(0, 4096, 0x7f34f3ffdd70) = 32
-11:00:23.567298 mmap(0x7f34f0000000, 67108864, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f34e8000000
-11:00:23.574133 mprotect(0x7f34e8000000, 135168, PROT_READ|PROT_WRITE) = 0
-11:00:23.574863 read(33,  <unfinished ...>
-11:00:24.372337 +++ exited with 0 +++

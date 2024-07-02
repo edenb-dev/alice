@@ -2,9 +2,9 @@
 set -e
 trap 'error ${LINENO}' ERR
 
-dotnet build
+#dotnet build
 
-cd compiled/test1/initial/
+#cd compiled/test1/initial/
 
 # The workload directory is where the files of the application will be stored.
 # The application, as it runs, will modify the workload directory and its contents.
@@ -23,11 +23,15 @@ mkdir traces_dir
 # This is a C# example. We currently precompile it.
 
 
+#rm -rf Data
+
 cp -a ./librvnpal.linux.x64.so workload_dir/
 cp -a ./libsodium.linux.x64.so workload_dir/
 cp -a ./libzstd.linux.x64.so workload_dir/
 
 
+
+echo -n "hello" > workload_dir/file1
 
 
 # Moving into the workload directory.
@@ -41,4 +45,4 @@ cd workload_dir
 # argument specifies where all the traces recorded will be stored.
 alice-record --workload_dir . \
 	--traces_dir ../traces_dir \
-	/home/lior/final_project/alice/scenario_builder/bin/Debug/net7.0/app
+	../test_complexCharAdd

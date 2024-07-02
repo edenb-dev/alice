@@ -1,0 +1,19 @@
+13:34:44.201593 syscall_334(0x7fab3668dfe0, 0x20, 0, 0x53053053, 0x80, 0x7ffd61066f3f) = 0
+13:34:44.201793 set_robust_list(0x7fab3668d920, 24) = 0
+13:34:44.203661 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+13:34:44.203935 sched_getaffinity(2244, 128, 0x7fab3668cc70) = 32
+13:34:44.204709 sched_setaffinity(0, 128, 0x7fab3668cc70) = 0
+13:34:44.205409 sigaltstack(NULL, {ss_sp=0, ss_flags=SS_DISABLE, ss_size=0}) = 0
+13:34:44.206050 mmap(NULL, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fab37429000
+13:34:44.206317 mprotect(0x7fab37429000, 4096, PROT_NONE) = 0
+13:34:44.206582 sigaltstack({ss_sp=0x7fab37429000, ss_flags=0, ss_size=16384}, NULL) = 0
+13:34:44.207315 gettid()                = 2246
+13:34:44.207576 futex(0x5581677349a0, FUTEX_WAKE_PRIVATE, 1) = 1
+13:34:44.209477 futex(0x558167734950, FUTEX_WAKE_PRIVATE, 1) = 0
+13:34:44.211361 getpid()                = 2244
+13:34:44.212235 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7fab28000000
+13:34:44.212491 munmap(0x7fab2c000000, 67108864) = 0
+13:34:44.213807 mprotect(0x7fab28000000, 135168, PROT_READ|PROT_WRITE) = 0
+13:34:44.213964 prctl(PR_SET_NAME, 0x7fab28000b70, 0x7fab28000b70, 0xf, 0xffffffffffffffff) = 0
+13:34:44.216105 poll([...], 1, 4294967295 <unfinished ...>
+13:34:46.139847 +++ killed by SIGABRT +++

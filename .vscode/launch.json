@@ -11,7 +11,7 @@
             "program": "./bin/alice-check",
             "console": "integratedTerminal",
             // "args": " --traces_dir=./scenario_builder/compiled/test1/initial/traces_dir --checker=./scenario_builder/compiled/test1/initial/checker_complexCharAdd"
-            "args": " --traces_dir=./example/toy/traces_dir --checker=./example/toy/toy_checker.py"
+            "args": " --traces_dir=./workspace/traces_dir --checker=./workspace/checker"
         }
     ]
 }

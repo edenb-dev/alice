@@ -17,7 +17,7 @@ public class Program
     {
 
         // test_basicAdd();
-        // check_basicAdd(args);
+        check_basicAdd(args);
 
         // test_complexCharAdd();
         // check_complexCharAdd(args);
@@ -26,7 +26,7 @@ public class Program
         // Console.WriteLine("Hello World!");
 
         // example_toy();
-        Console.WriteLine("Hello World!");
+        // Console.WriteLine("Hello World!");
     }
 
 

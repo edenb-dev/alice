@@ -36,5 +36,35 @@ fi
 
 # ---- Generating code ----- 
 
-echo $DIRECTORY
-echo $TASK
+# DEBUG
+# echo $DIRECTORY
+# echo $TASK
+
+mkdir -p $ALICE_HOME/workspace/$DIRECTORY
+
+if [ "$TASK" = "T" ]; then
+    mv "$ALICE_HOME/scenario_builder/public/app" "$ALICE_HOME/workspace/$DIRECTORY/test"
+    cp -a "$ALICE_HOME/workspace/$DIRECTORY/test" "$ALICE_HOME/workspace/app"
+
+    cp -a "$ALICE_HOME/workspace/global_workload.sh" "$ALICE_HOME/workspace/$DIRECTORY/workload.sh"
+elif [ "$TASK" = "C" ]; then
+    mv "$ALICE_HOME/scenario_builder/public/app" "$ALICE_HOME/workspace/$DIRECTORY/checker"
+fi
+
+
+
+
+if [ "$TASK" = "T" ]; then
+    echo "Running workload in workspace dir"
+
+    cd $ALICE_HOME/workspace
+    $ALICE_HOME/workspace/workload.sh
+fi
+
+
+
+
+
+
+
+

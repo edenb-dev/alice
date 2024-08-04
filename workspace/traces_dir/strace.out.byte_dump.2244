@@ -1,5 +1,0 @@
-*.NET Finalizer*.NET Tiered Com*Unhandled exception. System.IndexOutOfRangeException: Index was outside the bounds of the array.
-   at Program.extract_stdout(String[] args)
-   at Program.check_basicAdd(String[] args)
-   at Program.Main(String[] args)
-
